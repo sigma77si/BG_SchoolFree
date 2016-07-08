@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dev.sigma77.bg_schoolfree">
+
+    android:installLocation="preferExternal"
+    android:versionCode="1"
+    android:versionName="1">
+
+    <!-- <uses-permission android:name="com.android.vending.BILLING" /> -->
+    <!-- <uses-permission android:name="android.permission.INTERNET" /> -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CountActivity"
+            android:label="@string/title_activity_count"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FindCorrectPic"
+            android:label="@string/title_activity_test2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".IntroTextForAllActivity"
+            android:label="@string/title_activity_test2_intro"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ButtonActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_test3"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name=".CroppedPicActivity"
+            android:label="@string/title_activity_cuted_pic"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ResultActivity"
+            android:label="@string/title_activity_result"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".PracticeActivity"
+            android:label="@string/title_activity_practice"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".TestActivity"
+            android:label="@string/title_activity_test"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".TestResultsActivity"
+            android:label="@string/title_activity_test_results"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HelpActivity"
+            android:label="@string/title_activity_help"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MIdleDigit"
+            android:label="@string/title_activity_happy_birthday"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MemoryActivity"
+            android:label="@string/title_activity_memory"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ClockActivity"
+            android:label="@string/title_activity_clock"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SimilarityActivity"
+            android:label="@string/title_activity_similarity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".SeeDigitActivity"
+            android:label="@string/title_activity_see_digit"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".MethodsFor10AnswersActivitys"
+            android:label="@string/title_activity_see_digit"
+            android:screenOrientation="portrait">
+        </activity>
+    </application>
+
+</manifest>
