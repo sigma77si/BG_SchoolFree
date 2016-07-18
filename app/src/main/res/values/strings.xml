@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">БГ ученик</string>
+    <string name="app_name">БГ училище Първокласник</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_count">Преброй</string>
-    <string name="title_activity_test2">Test2</string>
+    <string name="title_activity_count">Преброй сгънатите пръсти</string>
+    <string name="title_activity_find_correct_pic">Кой е отговора?</string>
     <string name="title_activity_test2_intro">Test2IntroActivity</string>
     <string name="Intro1Text1">Пребройте на следващата страница пръстите които не са сгънати и натиснете съответната цифра.</string>
 
@@ -48,10 +48,10 @@
         \n \n В приложението са използвани текстове и картинки от трите учебни тетрадки \"Азбука на мисленето\". Авторските права са на техният създател Румен Генков.  </string>
     <string name="about"> "Lorem ipsum – псевдо-латинский текст, который используется для веб дизайна, типографии, оборудования, и распечатки вместо английского текста для того, чтобы сделать ударение не на содержание, а на элементы дизайна. Такой текст также называется как заполнитель. Это очень удобный инструмент для моделей (макетов). Он помогает выделить визуальные элементы в документе или презентации, например текст, шрифт или разметка. Lorem ipsum по большей части является элементом латинского текста классического автора и философа Цицерона. Слова и буквы были заменены добавлением или сокращением элементов, поэтому будет совсем неразумно пытаться передать содержание; это не гениально, не правильно, используется даже не понятный латинский. Хотя Lorem ipsum напоминает классический латинский, вы не найдете никакого смысла в сказанном. Поскольку текст Цицерона не содержит буквы K, W, или Z, что чуждо для латинского, эти буквы, а также многие другие часто вставлены в случайном порядке, чтобы скопировать тексты различных Европейских языков, поскольку диграфы не встречаются в оригинальных текстах.
 </string>
-    <string name="title_activity_test3">Test3Activity</string>
+    <string name="title_activity_button">Открий еднаквите</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="title_activity_cuted_pic">CutedPicActivity</string>
+    <string name="title_activity_cuted_pic">Сглоби</string>
     <string-array name="num">
         <item>\?</item>
         <item>2</item>
@@ -90,7 +90,7 @@
     <string name="title_activity_memory">Запомни картинките</string>
     <string name="title_activity_clock">Часовник</string>
     <string name="title_activity_similarity">Подобни</string>
-    <string name="title_activity_see_digit">Коя е цифрата</string>
+    <string name="title_activity_see_digit">Натисни правилната цифра</string>
     <string name="title_activity_activity_help">ActivityHelp</string>
 
 </resources>

@@ -9,6 +9,10 @@
     android:orientation="vertical"
     android:weightSum="5"
     android:background="#ff52ccff">
+    <include
+        layout="@layout/app_bar"
+        android:id="@+id/app_bar"
+        />
 
 
     <LinearLayout

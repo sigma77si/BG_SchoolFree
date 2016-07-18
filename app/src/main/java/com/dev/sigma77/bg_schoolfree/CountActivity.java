@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.text.Layout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,7 +22,7 @@ import java.util.Map;
 import java.util.Random;
 
 
-public class CountActivity extends Activity implements View.OnClickListener {
+public class CountActivity extends AppCompatActivity implements View.OnClickListener {
     Button btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10;
     SoundPool sp;
 
@@ -32,12 +35,25 @@ public class CountActivity extends Activity implements View.OnClickListener {
     private int correctAnswers, currentGamePoints = 0;
     static int game = 1;
     private int testNum;
+    private Toolbar toolbar;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_count);
+
+        toolbar = (Toolbar) findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        if (MainActivity.isTest) {
+            toolbar.setVisibility(View.INVISIBLE);
+        }
+
         btn0 = (Button) findViewById(R.id.button0);
         btn1 = (Button) findViewById(R.id.button1);
         btn2 = (Button) findViewById(R.id.button2);

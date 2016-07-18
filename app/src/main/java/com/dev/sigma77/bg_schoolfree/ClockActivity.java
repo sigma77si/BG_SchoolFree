@@ -6,6 +6,7 @@ import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -17,7 +18,7 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
-public class ClockActivity extends Activity implements View.OnClickListener{
+public class ClockActivity extends AppCompatActivity implements View.OnClickListener{
     Button btn1, btn2, btn3;
     ImageView clock;
     String[]btn3Time=new String[12];
@@ -34,10 +35,23 @@ public class ClockActivity extends Activity implements View.OnClickListener{
     Set passedScens=new HashSet();
     int randomScene;
     public static int currentGamePoints = 0, correctAnswers = 0;
+    private Toolbar toolbar;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clock);
+
+        toolbar = (Toolbar) findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (MainActivity.isTest) {
+            toolbar.setVisibility(View.INVISIBLE);
+        }
         btn1= (Button) findViewById(R.id.btn1);
         btn2= (Button) findViewById(R.id.btn2);
         btn3= (Button) findViewById(R.id.btn3);

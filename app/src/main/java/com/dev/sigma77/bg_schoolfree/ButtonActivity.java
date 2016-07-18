@@ -7,6 +7,8 @@ import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,7 +24,7 @@ import java.util.Map;
 import java.util.Set;
 
 
-public class ButtonActivity extends Activity implements View.OnClickListener {
+public class ButtonActivity extends AppCompatActivity implements View.OnClickListener {
 
     static int game=1;
     SoundPool sp;
@@ -35,12 +37,22 @@ public class ButtonActivity extends Activity implements View.OnClickListener {
     Map<Integer, ImageButton> buttonMap = new HashMap<>();
     Set<Integer> correctAnswersSet = new HashSet<>();
     private int testNum;
+    private Toolbar toolbar;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_button);
+        toolbar = (Toolbar) findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (MainActivity.isTest) {
+            toolbar.setVisibility(View.INVISIBLE);
+        }
+
         btn1 = (ImageButton) findViewById(R.id.imageButton1);
         btn2 = (ImageButton) findViewById(R.id.imageButton2);
         btn3 = (ImageButton) findViewById(R.id.imageButton3);

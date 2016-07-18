@@ -12,6 +12,7 @@ import android.widget.TextView;
 public class HelpActivity extends AppCompatActivity {
     public static TextView text;
     Button btn;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

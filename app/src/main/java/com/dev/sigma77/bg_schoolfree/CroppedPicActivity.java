@@ -6,6 +6,8 @@ import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,7 +25,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class CroppedPicActivity extends Activity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
+public class CroppedPicActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
     Button btnCheck;
     Spinner spinner2, spinner3, spinner4, spinner5, spinner6;
     SoundPool sp;
@@ -37,11 +39,22 @@ public class CroppedPicActivity extends Activity implements View.OnClickListener
     private int testNum;
     LinearLayout layout1, layout2, layoutSpinners;
     Map<Integer, Integer> imgresource = new HashMap<>();
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cuted_pic);
+
+        toolbar = (Toolbar) findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (MainActivity.isTest) {
+            toolbar.setVisibility(View.INVISIBLE);
+        }
+
         spinner2 = (Spinner) findViewById(R.id.spinner2);
         spinner3 = (Spinner) findViewById(R.id.spinner3);
         spinner4 = (Spinner) findViewById(R.id.spinner4);

@@ -36,18 +36,67 @@ public class PracticeActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        v=(ImageView)findViewById(R.id.imageView9);
+        v = (ImageView) findViewById(R.id.imageView9);
         reciclerView = (RecyclerView) findViewById(R.id.drowerList);
-        adapter = new VizAdapter(this, getData(),"Practice");
+        adapter = new VizAdapter(this, getData(), "Practice");
         reciclerView.setAdapter(adapter);
         reciclerView.setLayoutManager(new LinearLayoutManager(this));
+
 
     }
 
     public static List<DataInformation> getData() {
         List<DataInformation> data = new ArrayList<>();
-        int[] icons = {R.drawable.count_on_fingers_04_small, R.drawable.mushroom1_small, R.drawable.a2_small, R.drawable.button6_small, R.drawable.pear_main_small,R.drawable.count_on_fingers_04_small,R.drawable.zapomni1,R.drawable.clock1,R.drawable.similar21,R.drawable.digit3,R.drawable.squares5,R.drawable.next_digit3,R.drawable.similarity_animal_1,R.drawable.similarity_things_1,R.drawable.letters_1,R.drawable.lines_1,R.drawable.half_figure_1,R.drawable.arrow_2,R.drawable.similarity_cubes_4,R.drawable.similarity_dice_1,R.drawable.cube_bloks_1,R.drawable.cubes_count_1,R.drawable.cubes_count_1};
-        String[] titles = {"Преброй пръстите", "Открий силуета", "Намери излишната картинка", "Открий еднаквите", "Сглоби картината","Преброй сгънатите пръсти","Запомни картинките","Колко е часът?","Намери подобните","Коя е цифрата?","Колко са квадратите?","Коя е следващата цифра?","Кои си приличат? Животни","Кои си приличат? Предмети","Кои си приличат? Букви","Кои си приличат? Линий","Кои си приличат? Фигури","Кои си приличат? Стрелки","Кои си приличат? Кубчета","Кои си приличат? Зарчета","Колко тухли трябват?","Преброй кубчетата","По малката цифра"};
+        int[] icons = {
+                R.drawable.count_on_fingers_04_small
+                , R.drawable.mushroom1_small
+                , R.drawable.a2_small
+                , R.drawable.button6_small
+                , R.drawable.pear_main_small
+                , R.drawable.count_on_fingers_04_small
+                , R.drawable.zapomni1
+                , R.drawable.clock1
+                , R.drawable.similar21
+                , R.drawable.digit3
+                , R.drawable.squares5
+                , R.drawable.next_digit3
+                , R.drawable.similarity_animal_1
+                , R.drawable.similarity_things_1
+//              ,R.drawable.letters_1
+//              ,R.drawable.lines_1
+//              ,R.drawable.half_figure_1
+//              ,R.drawable.arrow_2
+//              ,R.drawable.similarity_cubes_4
+//              ,R.drawable.similarity_dice_1
+//              ,R.drawable.cube_bloks_1
+//              ,R.drawable.cubes_count_1
+//              ,R.drawable.cubes_count_1
+        };
+        String[] titles = {
+                "Преброй пръстите"
+                , "Открий силуета"
+                , "Намери излишната картинка"
+                , "Открий еднаквите"
+                , "Сглоби картината"
+                , "Преброй сгънатите пръсти"
+                , "Запомни картинките"
+                , "Колко е часът?"
+                , "Намери подобните"
+                , "Коя е цифрата?"
+                , "Колко са квадратите?"
+                , "Коя е следващата цифра?"
+                , "Кои си приличат? Животни"
+                , "Кои си приличат? Предмети"
+//              ,"Кои си приличат? Букви"
+//              ,"Кои си приличат? Линий"
+//              ,"Кои си приличат? Фигури"
+//              ,"Кои си приличат? Стрелки"
+//              ,"Кои си приличат? Кубчета"
+//              ,"Кои си приличат? Зарчета"
+//              ,"Колко тухли трябват?"
+//              ,"Преброй кубчетата"
+//              ,"По малката цифра"
+        };
         for (int i = 0; i < titles.length && i < icons.length; i++) {
             DataInformation current = new DataInformation();
 
@@ -75,10 +124,12 @@ public class PracticeActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            startActivity(new Intent(this,HelpActivity.class));
+            startActivity(new Intent(this, HelpActivity.class));
 //            return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }

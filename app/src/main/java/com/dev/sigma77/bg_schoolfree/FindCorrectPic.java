@@ -7,6 +7,8 @@ import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,7 +20,7 @@ import com.dev.sigma77.bg_schoolfree.util.TransitionParams;
 import java.util.Arrays;
 
 
-public class FindCorrectPic extends Activity implements View.OnClickListener {
+public class FindCorrectPic extends AppCompatActivity implements View.OnClickListener {
     public static int currentGamePoints = 0, correctAnswers = 0;
 
     private Button btn1, btn2, btn3, btn4,
@@ -40,12 +42,22 @@ public class FindCorrectPic extends Activity implements View.OnClickListener {
     boolean isEnd = false;
     private int testNum;
     String gameNameString;
+    private Toolbar toolbar;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_correct_pic);
+
+        toolbar = (Toolbar) findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (MainActivity.isTest) {
+            toolbar.setVisibility(View.INVISIBLE);
+        }
         Intent mIntent = getIntent();
         testNum = mIntent.getIntExtra("TestNum", 0);
         sceneNum = mIntent.getIntExtra("SceneNum", 0);
@@ -550,7 +562,7 @@ public class FindCorrectPic extends Activity implements View.OnClickListener {
                 @Override
                 public void run() {
 
-                    if (MainActivity.isTest == true) {
+                    if (MainActivity.isTest) {
                         startNextTestScene();
 
                     } else {

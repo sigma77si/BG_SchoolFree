@@ -26,11 +26,21 @@
         <activity
             android:name=".CountActivity"
             android:label="@string/title_activity_count"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".PracticeActivity"
+            />
+        </activity>
         <activity
             android:name=".FindCorrectPic"
-            android:label="@string/title_activity_test2"
-            android:screenOrientation="portrait" />
+            android:label="@string/title_activity_find_correct_pic"
+            android:screenOrientation="portrait">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".PracticeActivity"
+            />
+    </activity>
         <activity
             android:name=".IntroTextForAllActivity"
             android:label="@string/title_activity_test2_intro"
@@ -38,13 +48,23 @@
         <activity
             android:name=".ButtonActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_test3"
+            android:label="@string/title_activity_button"
             android:screenOrientation="portrait"
-            android:theme="@style/FullscreenTheme" />
+            android:theme="@style/FullscreenTheme">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".PracticeActivity"
+            />
+    </activity>
         <activity
             android:name=".CroppedPicActivity"
             android:label="@string/title_activity_cuted_pic"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".PracticeActivity"
+            />
+    </activity>
         <activity
             android:name=".ResultActivity"
             android:label="@string/title_activity_result"
@@ -76,7 +96,11 @@
         <activity
             android:name=".HelpActivity"
             android:label="@string/title_activity_help"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"></activity>
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".PracticeActivity"
+            />
         <activity
             android:name=".MIdleDigit"
             android:label="@string/title_activity_happy_birthday"
@@ -88,7 +112,12 @@
         <activity
             android:name=".ClockActivity"
             android:label="@string/title_activity_clock"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".PracticeActivity"
+            />
+    </activity>
         <activity
             android:name=".SimilarityActivity"
             android:label="@string/title_activity_similarity"
