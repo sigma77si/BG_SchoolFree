@@ -57,8 +57,8 @@ public class ResultActivity extends ActionBarActivity implements View.OnClickLis
         toolbar= (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+      //  getSupportActionBar().setHomeButtonEnabled(true);
+    //    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Intent mIntent = getIntent();
         if(MainActivity.isTest==false){
             ResultActivity.testResultLayout.setVisibility(View.INVISIBLE);

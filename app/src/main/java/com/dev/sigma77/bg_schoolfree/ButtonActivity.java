@@ -1,6 +1,5 @@
 package com.dev.sigma77.bg_schoolfree;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.AudioManager;
@@ -34,10 +33,12 @@ public class ButtonActivity extends AppCompatActivity implements View.OnClickLis
     ImageButton btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11,
             btn12, btn13, btn14, btn15, btn16;
 
+    ImageButton[] buttonsArray;
     Map<Integer, ImageButton> buttonMap = new HashMap<>();
     Set<Integer> correctAnswersSet = new HashSet<>();
     private int testNum;
     private Toolbar toolbar;
+    int maxGames=2;
 
 
     @Override
@@ -49,6 +50,7 @@ public class ButtonActivity extends AppCompatActivity implements View.OnClickLis
 
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         if (MainActivity.isTest) {
             toolbar.setVisibility(View.INVISIBLE);
         }
@@ -70,6 +72,8 @@ public class ButtonActivity extends AppCompatActivity implements View.OnClickLis
         btn15 = (ImageButton) findViewById(R.id.imageButton15);
         btn16 = (ImageButton) findViewById(R.id.imageButton16);
         check = (Button) findViewById(R.id.btnCheck);
+        buttonsArray= new ImageButton[]{btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11,
+                btn12, btn13, btn14, btn15, btn16};
 
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
@@ -136,6 +140,7 @@ public class ButtonActivity extends AppCompatActivity implements View.OnClickLis
         currentGamePoints=0;
         numofAnswers=0;
         setGameCorrectAnswerImgs();
+
     }
 
 
@@ -170,6 +175,7 @@ public class ButtonActivity extends AppCompatActivity implements View.OnClickLis
 
 //
             case R.id.btnCheck: {
+                check.setClickable(false);
 
 
                 isEnd=true;
@@ -192,11 +198,16 @@ public class ButtonActivity extends AppCompatActivity implements View.OnClickLis
             }
 
             default:{
-                sp.play(clickAnswerSound, 1, 1, 0, 0, 1);
-                ImageButton selectedButton = buttonMap.get(selectedButtonId);
-                setBgrGrey(selectedButton);
-                if(correctAnswersSet.contains(selectedButtonId)){
-                    correctAnswers++;
+                if (numofAnswers==3) {
+                    disableButtonsClick();
+
+                } else {
+                    sp.play(clickAnswerSound, 1, 1, 0, 0, 1);
+                    ImageButton selectedButton = buttonMap.get(selectedButtonId);
+                    setBgrGrey(selectedButton);
+                    if(correctAnswersSet.contains(selectedButtonId)){
+                        correctAnswers++;
+                    }
                 }
             }
 
@@ -248,7 +259,7 @@ public class ButtonActivity extends AppCompatActivity implements View.OnClickLis
             Transition.toNextActivity(transitionParams);
 
         }else {
-            if(game==1) {
+            if(game<maxGames) {
 
 
                 isEnd=false;
@@ -261,6 +272,8 @@ public class ButtonActivity extends AppCompatActivity implements View.OnClickLis
                     @Override
                     public void run() {
                         setAllBtnsBgrWhite();
+                        unableButtonsClick();
+                        check.setClickable(true);
                     }
                 },3500);
 
@@ -273,6 +286,20 @@ public class ButtonActivity extends AppCompatActivity implements View.OnClickLis
             //   new Handler().postDelayed(new RunnableShowAnswers(this,MainActivity.class), 4700);
         }
         //btn15.setBackgroundColor(getResources().getColor(R.color.green));
+    }
+    private  void disableButtonsClick(){
+
+        for (int i=0;i<buttonsArray.length;i++) {
+            buttonsArray[i].setClickable(false);
+        }
+
+    }
+    private  void unableButtonsClick(){
+
+        for (int i=0;i<buttonsArray.length;i++) {
+            buttonsArray[i].setClickable(true);
+        }
+
     }
 
     private void setAllBtnsBgrWhite() {
@@ -295,11 +322,11 @@ public class ButtonActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     public void setBgrGrey(ImageButton btn) {
-        if (numofAnswers < 3) {
+
             numofAnswers++;
             //btn.setBackgroundColor(getResources().getColor(R.color.material_deep_teal_200));
             btn.setBackgroundResource(R.drawable.shapes2);
-        }
+
 
     }
 }
