@@ -50,7 +50,8 @@ public class ClockActivity extends AppCompatActivity implements View.OnClickList
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         if (MainActivity.isTest) {
-            toolbar.setVisibility(View.INVISIBLE);
+            getSupportActionBar().setHomeButtonEnabled(false);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         }
         btn1= (Button) findViewById(R.id.btn1);
         btn2= (Button) findViewById(R.id.btn2);
@@ -138,6 +139,12 @@ public class ClockActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
        int answer= v.getId();
+
+        if (count==12) {
+            btn1.setClickable(false);
+            btn2.setClickable(false);
+            btn3.setClickable(false);
+        }
         checkAnswr(answer);
 
     }

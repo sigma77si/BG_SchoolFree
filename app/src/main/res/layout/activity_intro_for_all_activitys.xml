@@ -7,6 +7,10 @@
     android:orientation="vertical"
     android:gravity="center"
     android:weightSum="10">
+    <include
+        layout="@layout/app_bar"
+        android:id="@+id/app_bar"
+        />
 
 
     <LinearLayout
@@ -16,6 +20,7 @@
         android:gravity="center"
         android:layout_weight="4"
         android:layout_gravity="center"
+        android:paddingTop="5dp"
         >
 
         <TextView  android:layout_width="wrap_content"

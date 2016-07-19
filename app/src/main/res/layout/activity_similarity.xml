@@ -11,6 +11,10 @@
     tools:context="com.dev.sigma77.bg_schoolfree.SimilarityActivity"
     android:weightSum="4"
     android:background="@android:color/darker_gray">
+    <include
+        layout="@layout/app_bar"
+        android:id="@+id/app_bar"
+        />
 
     <LinearLayout
         android:orientation="horizontal"

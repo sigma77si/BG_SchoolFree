@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,18 +17,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-public class IntroTextForAllActivity extends Activity {
+public class IntroTextForAllActivity extends AppCompatActivity {
     public static TextView text;
     Button btnNext ;
     ImageButton btnSound;
     ImageView pic;
-
+    private Toolbar toolbar;
     MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro_for_all_activitys);
+        toolbar= (Toolbar) findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
         Intent mIntent = getIntent();
         final int textToSet = mIntent.getIntExtra("IntroText",0);
         final int image = mIntent.getIntExtra("ImageToLoad", 0);

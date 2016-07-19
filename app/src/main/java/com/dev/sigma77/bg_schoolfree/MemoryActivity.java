@@ -7,6 +7,8 @@ import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -15,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-public class MemoryActivity extends Activity implements View.OnClickListener {
+public class MemoryActivity extends AppCompatActivity implements View.OnClickListener {
     ImageButton btn1,btn2,btn3,btn4, btn5,btn6,btn7,btn8,btn9,btn10,
             btn11,btn12,btn13,btn14, btn15,btn16,btn17,btn18,btn19,btn20,
             btn21,btn22,btn23,btn24, btn25,btn26,btn27,btn28,btn29,btn30;
@@ -29,12 +31,24 @@ public class MemoryActivity extends Activity implements View.OnClickListener {
     int correctSound, wrongSound, endSound,clickAnswerSound;
     public static int currentGamePoints = 0, correctAnswers = 0;
     int count=0;
+    private Toolbar toolbar;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memory);
+
+        toolbar = (Toolbar) findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        if (MainActivity.isTest) {
+            getSupportActionBar().setHomeButtonEnabled(false);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        }
         btn1 = (ImageButton) findViewById(R.id.imageButton1);
         btn2 = (ImageButton) findViewById(R.id.imageButton2);
         btn3 = (ImageButton) findViewById(R.id.imageButton3);

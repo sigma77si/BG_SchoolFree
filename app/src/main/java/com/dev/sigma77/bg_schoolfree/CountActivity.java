@@ -51,7 +51,8 @@ public class CountActivity extends AppCompatActivity implements View.OnClickList
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         if (MainActivity.isTest) {
-            toolbar.setVisibility(View.INVISIBLE);
+            getSupportActionBar().setHomeButtonEnabled(false);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         }
 
         btn0 = (Button) findViewById(R.id.button0);

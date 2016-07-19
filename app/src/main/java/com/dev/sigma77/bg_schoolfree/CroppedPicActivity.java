@@ -52,7 +52,8 @@ public class CroppedPicActivity extends AppCompatActivity implements View.OnClic
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         if (MainActivity.isTest) {
-            toolbar.setVisibility(View.INVISIBLE);
+            getSupportActionBar().setHomeButtonEnabled(false);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         }
 
         spinner2 = (Spinner) findViewById(R.id.spinner2);

@@ -23,6 +23,7 @@
         android:layout_weight="1"
         android:weightSum="4"
         android:padding="3dp"
+        android:paddingTop="5dp"
         android:background="@android:color/darker_gray"
         android:id ="@+id/Layout1">
 

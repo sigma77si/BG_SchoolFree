@@ -52,7 +52,8 @@ public class ButtonActivity extends AppCompatActivity implements View.OnClickLis
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         if (MainActivity.isTest) {
-            toolbar.setVisibility(View.INVISIBLE);
+            getSupportActionBar().setHomeButtonEnabled(false);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         }
 
         btn1 = (ImageButton) findViewById(R.id.imageButton1);

@@ -6,8 +6,9 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+
     tools:context="com.dev.sigma77.bg_schoolfree.MemoryActivity">
+
 
 
     <LinearLayout
@@ -16,6 +17,10 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:weightSum="6">
+        <include
+            layout="@layout/app_bar"
+            android:id="@+id/app_bar"
+            />
 
         <TextView
             android:layout_width="wrap_content"

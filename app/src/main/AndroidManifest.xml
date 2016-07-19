@@ -43,7 +43,7 @@
     </activity>
         <activity
             android:name=".IntroTextForAllActivity"
-            android:label="@string/title_activity_test2_intro"
+            android:label="@string/title_activity_intro_text"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ButtonActivity"
@@ -108,7 +108,11 @@
         <activity
             android:name=".MemoryActivity"
             android:label="@string/title_activity_memory"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity" />
+    </activity>
         <activity
             android:name=".ClockActivity"
             android:label="@string/title_activity_clock"
@@ -121,11 +125,21 @@
         <activity
             android:name=".SimilarityActivity"
             android:label="@string/title_activity_similarity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".PracticeActivity"
+            />
+    </activity>
         <activity
             android:name=".SeeDigitActivity"
             android:label="@string/title_activity_see_digit"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".PracticeActivity"
+            />
+    </activity>
         <activity
             android:name=".MethodsFor10AnswersActivitys"
             android:label="@string/title_activity_see_digit"

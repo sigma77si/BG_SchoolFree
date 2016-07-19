@@ -65,7 +65,8 @@ public class MethodsFor10AnswersActivitys extends AppCompatActivity implements V
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         if (MainActivity.isTest) {
-            toolbar.setVisibility(View.INVISIBLE);
+            getSupportActionBar().setHomeButtonEnabled(false);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         }
 
         initiateButtons();

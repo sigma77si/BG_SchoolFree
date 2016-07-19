@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,7 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-public class SeeDigitActivity extends Activity implements View.OnClickListener {
+public class SeeDigitActivity extends AppCompatActivity implements View.OnClickListener {
     MethodsFor10AnswersActivitys digitActivity=new MethodsFor10AnswersActivitys();
     Button btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10;
     SoundPool sp;
@@ -30,12 +32,23 @@ public class SeeDigitActivity extends Activity implements View.OnClickListener {
     static int game = 1;
     private int testNum;
     String gameName;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_see_digit);
+
+        toolbar = (Toolbar) findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (MainActivity.isTest) {
+            getSupportActionBar().setHomeButtonEnabled(false);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        }
 
         digitActivity.initiateButtons();
         mainPic = (ImageView) findViewById(R.id.imageView);
