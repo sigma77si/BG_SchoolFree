@@ -205,6 +205,7 @@ public class ButtonActivity extends AppCompatActivity implements View.OnClickLis
                     sp.play(clickAnswerSound, 1, 1, 0, 0, 1);
                     ImageButton selectedButton = buttonMap.get(selectedButtonId);
                     setBgrGrey(selectedButton);
+                    selectedButton.setClickable(false);
                     if(correctAnswersSet.contains(selectedButtonId)){
                         correctAnswers++;
                     }
@@ -259,7 +260,7 @@ public class ButtonActivity extends AppCompatActivity implements View.OnClickLis
             Transition.toNextActivity(transitionParams);
 
         }else {
-            if(game<maxGames) {
+            if(game < maxGames) {
 
 
                 isEnd=false;
