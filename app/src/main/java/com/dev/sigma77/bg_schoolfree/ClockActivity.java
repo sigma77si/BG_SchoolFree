@@ -2,11 +2,15 @@ package com.dev.sigma77.bg_schoolfree;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -15,6 +19,7 @@ import com.dev.sigma77.bg_schoolfree.util.Transition;
 import com.dev.sigma77.bg_schoolfree.util.TransitionParams;
 
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.Random;
 import java.util.Set;
 
@@ -36,8 +41,7 @@ public class ClockActivity extends AppCompatActivity implements View.OnClickList
     int randomScene;
     public static int currentGamePoints = 0, correctAnswers = 0;
     private Toolbar toolbar;
-
-
+    Locale myLocale;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,13 +50,12 @@ public class ClockActivity extends AppCompatActivity implements View.OnClickList
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
-
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        if (MainActivity.isTest) {
-            getSupportActionBar().setHomeButtonEnabled(false);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        setTitle(R.string.h_viz_adapter_title);
+        if (!MainActivity.isTest) {
+            getSupportActionBar().setHomeButtonEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
+
         btn1= (Button) findViewById(R.id.btn1);
         btn2= (Button) findViewById(R.id.btn2);
         btn3= (Button) findViewById(R.id.btn3);
@@ -201,6 +204,62 @@ public class ClockActivity extends AppCompatActivity implements View.OnClickList
         intent.putExtra("GamePoints", currentGamePoints);
         intent.putExtra("CorrectAnswers", correctAnswers);
         startActivity(intent);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        switch (item.getItemId()) {
+            case R.id.bg:
+                item.setChecked(true);
+                selLocale("bg");
+                break;
+            case R.id.en:
+                item.setChecked(true);
+                selLocale("en");
+
+                break;
+            case R.id.ru:
+                item.setChecked(true);
+                selLocale("ru");
+                break;
+            case R.id.de:
+                item.setChecked(true);
+                selLocale("de");
+                break;
+            case R.id.action_settings:
+                startActivity(new Intent(this, HelpActivity.class));
+
+
+            default:
+                selLocale("en");
+
+
+        }
+        return true;
+    }
+
+    private void selLocale(String language) {
+        myLocale =new Locale(language);
+        Resources res=getResources();
+        DisplayMetrics dm =res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale= myLocale;
+        res.updateConfiguration(conf,dm);
+        //     Intent intent=new Intent(this,MainActivity.class);
+//        finish();
+//        startActivity(intent);
+        onConfigurationChanged(conf);
+    }
+    @Override
+    public void onConfigurationChanged(Configuration newConfig)
+    {
+
+        setTitle(R.string.title_activity_see_digit);
+
+        super.onConfigurationChanged(newConfig);
+
     }
 
 }

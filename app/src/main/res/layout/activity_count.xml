@@ -7,7 +7,8 @@
     tools:context="com.dev.sigma77.bg_schoolfree.CountActivity"
     android:orientation="vertical"
     android:background="#c0e4eb"
-    android:weightSum="100">
+    android:weightSum="100"
+    android:id="@+id/bgrLayout">
     <include
         layout="@layout/app_bar"
         android:id="@+id/app_bar"

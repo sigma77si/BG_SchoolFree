@@ -1,28 +1,33 @@
 package com.dev.sigma77.bg_schoolfree;
 
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.ContextMenu;
+import android.text.Layout;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static boolean isTest = false;
 
-    Button practice;
-    Button test;
+   static Button practice;
+    static Button test;
     static Button btnPro;
+    Locale myLocale;
     SoundPool sp;
     MediaPlayer mp;
     boolean callMain;
@@ -31,19 +36,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static List<String> correctAnswersList = new ArrayList<>();
     public static List<String> gamePointsList = new ArrayList<>();
     private Toolbar toolbar;
+    static View appbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+       // myLocale = java.util.Locale.getDefault().getLanguage();
         Intent mIntent = getIntent();
         callMain= mIntent.getBooleanExtra("CallMain",false);
         setContentView(R.layout.activity_main);
 
-        practice = (Button) findViewById(R.id.btnGame7);
-        test = (Button) findViewById(R.id.btnGame8);
+        practice = (Button) findViewById(R.id.btnPractice);
+        test = (Button) findViewById(R.id.btnTest);
 
-
+         appbar=findViewById(R.id.app_bar);
         toolbar= (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
 
@@ -72,32 +79,61 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+//
+        switch (item.getItemId()) {
+            case R.id.bg:
+                item.setChecked(true);
+                selLocale("bg");
+                break;
+            case R.id.en:
+                item.setChecked(true);
+                selLocale("en");
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-//            return true;
-            //HelpActivity.text.setText(R.string.help);
-            startActivity(new Intent(this, HelpActivity.class));
+                break;
+            case R.id.ru:
+                item.setChecked(true);
+                selLocale("ru");
+                break;
+            case R.id.de:
+                item.setChecked(true);
+                selLocale("de");
+                break;
+            case R.id.action_settings:
+                startActivity(new Intent(this, HelpActivity.class));
+
+
+            default:
+                selLocale("en");
+
 
         }
-//        if (id == R.id.navigate) {
-//            startActivity(new Intent(this,HelpActivity.class));
-//            new Handler().postDelayed(new Runnable() {
-//
-//                @Override
-//                public void run() {
-//
-//                    HelpActivity.text.setText(R.string.about);
-//                }
-//            }, 4950);
-//
-//
-//        }
-
-
-        return super.onOptionsItemSelected(item);
+        return true;
     }
+
+    private void selLocale(String language) {
+        myLocale =new Locale(language);
+        Resources res=getResources();
+        DisplayMetrics dm =res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale= myLocale;
+        res.updateConfiguration(conf,dm);
+   //     Intent intent=new Intent(this,MainActivity.class);
+//        finish();
+//        startActivity(intent);
+        onConfigurationChanged(conf);
+    }
+    @Override
+    public void onConfigurationChanged(Configuration newConfig)
+    {
+        practice.setText(R.string.preparation);
+        test.setText(R.string.test);
+        setTitle(R.string.app_name);
+
+        super.onConfigurationChanged(newConfig);
+
+    }
+
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -119,7 +155,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 //
-            case R.id.btnGame7: {
+            case R.id.btnTest: {
                 isTest = true;
                 Intent in = new Intent(this, TestActivity.class);
 
@@ -127,8 +163,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             }
-            case R.id.btnGame8: {
-                isTest = true;
+            case R.id.btnPractice: {
+
                 Intent in = new Intent(this, PracticeActivity.class);
 
                 startActivity(in);
@@ -137,5 +173,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
 
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        setTitle(R.string.app_name);
+        practice.setText(R.string.preparation);
+        test.setText(R.string.test);
     }
 }

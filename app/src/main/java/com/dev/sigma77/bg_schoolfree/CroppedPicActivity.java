@@ -32,7 +32,8 @@ public class CroppedPicActivity extends AppCompatActivity implements View.OnClic
     ImageView img1, img2, img3, img4, img5, img6,
             v2img1, v2img2, v2img3, v2img4, v2img5, v2img6;
     boolean isEnd;
-
+    MenuItem bgM,enM,ruM,deM;
+    String locale;
 
    public static int scene = 1;
     int countAnswers = 1, correctAnswers = 0, correctSound, wrongSound, endSound, currentGamePoints = 0;
@@ -45,15 +46,14 @@ public class CroppedPicActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cuted_pic);
+        locale = java.util.Locale.getDefault().getLanguage();
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
-
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        if (MainActivity.isTest) {
-            getSupportActionBar().setHomeButtonEnabled(false);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        setTitle(R.string.title_activity_find_correct_pic);
+        if (!MainActivity.isTest) {
+            getSupportActionBar().setHomeButtonEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
         spinner2 = (Spinner) findViewById(R.id.spinner2);
@@ -70,6 +70,11 @@ public class CroppedPicActivity extends AppCompatActivity implements View.OnClic
 
 
       setArrayAdapters();
+        bgM= (MenuItem) findViewById(R.id.bg);
+        enM= (MenuItem) findViewById(R.id.en);
+        ruM= (MenuItem) findViewById(R.id.ru);
+        deM= (MenuItem) findViewById(R.id.de);
+       // bg.setChecked(true);
 
         btnCheck = (Button) findViewById(R.id.button1);
 
@@ -137,11 +142,24 @@ public class CroppedPicActivity extends AppCompatActivity implements View.OnClic
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+
+        switch (item.getItemId()){
+            case R.id.bg:
+                item.setChecked(true);
+            case R.id.en:
+                item.setChecked(true);
+            case R.id.ru:
+                item.setChecked(true);
+            case R.id.de:
+               item.setChecked(true);
+            case R.id.action_settings:
+                startActivity(new Intent(this, HelpActivity.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
 
-        return super.onOptionsItemSelected(item);
+
     }
 
     @Override

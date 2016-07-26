@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BG Schule</string>
+    <string name="test">Tests</string>
+    <string name="preparation">Ausbildung</string>
+    <string name="help">über</string>
+    <string name="title_activity_intro_text">Erklärung</string>
+    <string name="Intro1Text1">Zählen Sie die Finger, die nicht gebogen sind, und drücken Sie die entsprechende Zahl.</string>
+
+    <string name="a_viz_adapter_title">Zählen Sie die Finger</string>
+    <string name="b_viz_adapter_title">Finden Sie den Schatten</string>
+    <string name="c_viz_adapter_title">Finden Sie das falschen Bild</string>
+    <string name="d_viz_adapter_title">Welche sind dieselben</string>
+    <string name="e_viz_adapter_title">Ordnen Sie die Stücke</string>
+    <string name="f_viz_adapter_title">Zählen Sie die gefaltet Finger</string>
+    <string name="g_viz_adapter_title">Gedächtnis</string>
+    <string name="h_viz_adapter_title">Wie spät ist es?</string>
+    <string name="i_viz_adapter_title">Finden Sie die ähnliche</string>
+    <string name="j_viz_adapter_title">Was ist die Ziffer?</string>
+    <string name="k_viz_adapter_title">Wie viele Quadrate?</string>
+    <string name="l_viz_adapter_title">Was ist die nächste Ziffer?</string>
+    <string name="m_viz_adapter_title">Finden Sie ähnliche Tiere</string>
+    <string name="n_viz_adapter_title">Finden Sie ähnliche Artikel</string>
+    <string name="title_activity_see_digit">Drücken Sie die richtige Taste</string>
+    <string name="check">überprüfen</string>
+    überprüfen
+</resources>

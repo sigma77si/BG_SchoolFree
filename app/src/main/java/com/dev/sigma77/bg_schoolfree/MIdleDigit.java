@@ -9,6 +9,8 @@ import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -24,7 +26,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public class MIdleDigit extends Activity implements View.OnClickListener {
+public class MIdleDigit extends AppCompatActivity implements View.OnClickListener {
     SoundPool sp;
 
     boolean isEnd;
@@ -39,11 +41,21 @@ public class MIdleDigit extends Activity implements View.OnClickListener {
     Map<Integer, Button> buttonMap = new HashMap<>();
     Set<Integer> correctAnswersSet = new HashSet<>();
     private int testNum;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_midle_digit);
+
+        toolbar = (Toolbar) findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
+        setTitle(R.string.j_viz_adapter_title);
+
+        if (!MainActivity.isTest) {
+            getSupportActionBar().setHomeButtonEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
         btn1 = (Button) findViewById(R.id.btn1);
         btn2 = (Button) findViewById(R.id.btn2);
         btn3 = (Button) findViewById(R.id.btn3);

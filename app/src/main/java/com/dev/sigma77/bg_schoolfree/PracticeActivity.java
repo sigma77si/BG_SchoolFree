@@ -1,17 +1,21 @@
 package com.dev.sigma77.bg_schoolfree;
 
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 
 public class PracticeActivity extends AppCompatActivity {
@@ -32,9 +36,14 @@ public class PracticeActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
+        setTitle(R.string.preparation);
 
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (MainActivity.isTest) {
+            getSupportActionBar().setHomeButtonEnabled(false);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        }
 
         v = (ImageView) findViewById(R.id.imageView9);
         reciclerView = (RecyclerView) findViewById(R.id.drowerList);
@@ -45,7 +54,7 @@ public class PracticeActivity extends AppCompatActivity {
 
     }
 
-    public static List<DataInformation> getData() {
+    public List<DataInformation> getData() {
         List<DataInformation> data = new ArrayList<>();
         int[] icons = {
                 R.drawable.count_on_fingers_04_small
@@ -72,36 +81,56 @@ public class PracticeActivity extends AppCompatActivity {
 //              ,R.drawable.cubes_count_1
 //              ,R.drawable.cubes_count_1
         };
-        String[] titles = {
-                "Преброй пръстите"
-                , "Открий силуета"
-                , "Намери излишната картинка"
-                , "Открий еднаквите"
-                , "Сглоби картината"
-                , "Преброй сгънатите пръсти"
-                , "Запомни картинките"
-                , "Колко е часът?"
-                , "Намери подобните"
-                , "Коя е цифрата?"
-                , "Колко са квадратите?"
-                , "Коя е следващата цифра?"
-                , "Кои си приличат? Животни"
-                , "Кои си приличат? Предмети"
-//              ,"Кои си приличат? Букви"
-//              ,"Кои си приличат? Линий"
-//              ,"Кои си приличат? Фигури"
-//              ,"Кои си приличат? Стрелки"
-//              ,"Кои си приличат? Кубчета"
-//              ,"Кои си приличат? Зарчета"
-//              ,"Колко тухли трябват?"
-//              ,"Преброй кубчетата"
-//              ,"По малката цифра"
+
+        String a = getResources().getString(R.string.a_viz_adapter_title);
+        String b = getResources().getString( R.string.b_viz_adapter_title);
+        String c = getResources().getString( R.string.c_viz_adapter_title);
+        String d= getResources().getString(R.string.d_viz_adapter_title);
+        String e = getResources().getString(R.string.e_viz_adapter_title);
+        String f = getResources().getString( R.string.f_viz_adapter_title);
+        String g = getResources().getString( R.string.g_viz_adapter_title);
+        String h = getResources().getString( R.string.h_viz_adapter_title);
+        String i = getResources().getString( R.string.i_viz_adapter_title);
+        String j = getResources().getString( R.string.j_viz_adapter_title);
+        String k= getResources().getString(R.string.k_viz_adapter_title);
+        String l = getResources().getString(R.string.l_viz_adapter_title);
+        String m= getResources().getString(R.string.m_viz_adapter_title);
+        String n = getResources().getString(R.string.n_viz_adapter_title);
+        String[]titles={a,b,c,d,e,f,g,h,i,j,k,l,m,n
+
+
         };
-        for (int i = 0; i < titles.length && i < icons.length; i++) {
+
+//        String[] titles = {
+//                "Преброй пръстите"
+//                , "Открий силуета"
+//                , "Намери излишната картинка"
+//                , "Открий еднаквите"
+//                , "Сглоби картината"
+//                , "Преброй сгънатите пръсти"
+//                , "Запомни картинките"
+//                , "Колко е часът?"
+//                , "Намери подобните"
+//                , "Коя е цифрата?"
+//                , "Колко са квадратите?"
+//                , "Коя е следващата цифра?"
+//                , "Кои си приличат? Животни"
+//                , "Кои си приличат? Предмети"
+////              ,"Кои си приличат? Букви"
+////              ,"Кои си приличат? Линий"
+////              ,"Кои си приличат? Фигури"
+////              ,"Кои си приличат? Стрелки"
+////              ,"Кои си приличат? Кубчета"
+////              ,"Кои си приличат? Зарчета"
+////              ,"Колко тухли трябват?"
+////              ,"Преброй кубчетата"
+////              ,"По малката цифра"
+//        };
+        for (int ii = 0; ii < titles.length && ii < icons.length; ii++) {
             DataInformation current = new DataInformation();
 
-            current.iconId = icons[i];
-            current.title = titles[i];
+            current.iconId = icons[ii];
+            current.title = titles[ii];
             data.add(current);
         }
         return data;
@@ -120,15 +149,67 @@ public class PracticeActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        switch (item.getItemId()) {
+            case R.id.bg:
+                item.setChecked(true);
+                selLocale("bg");
+                break;
+            case R.id.en:
+                item.setChecked(true);
+                selLocale("en");
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            startActivity(new Intent(this, HelpActivity.class));
-//            return true;
+                break;
+            case R.id.ru:
+                item.setChecked(true);
+                selLocale("ru");
+                break;
+            case R.id.de:
+                item.setChecked(true);
+                selLocale("de");
+                break;
+            case R.id.action_settings:
+                startActivity(new Intent(this, HelpActivity.class));
+
+
+            default:
+        //        selLocale("en");
+
+
         }
 
+
         return super.onOptionsItemSelected(item);
+    }
+    private void selLocale(String language) {
+     Locale   myLocale =new Locale(language);
+        Resources res=getResources();
+        DisplayMetrics dm =res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale= myLocale;
+        res.updateConfiguration(conf,dm);
+        //     Intent intent=new Intent(this,PracticeActivity.class);
+//        finish();
+//        startActivity(intent);
+        onConfigurationChanged(conf);
+    }
+    @Override
+    public void onConfigurationChanged(Configuration newConfig)
+    {
+        adapter = new VizAdapter(this, getData(), "Practice");
+        reciclerView.setAdapter(adapter);
+        reciclerView.setLayoutManager(new LinearLayoutManager(this));
+        setTitle(R.string.app_name);
+
+        super.onConfigurationChanged(newConfig);
+
+    }
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        adapter = new VizAdapter(this, getData(), "Practice");
+        reciclerView.setAdapter(adapter);
+        reciclerView.setLayoutManager(new LinearLayoutManager(this));
+        setTitle(R.string.app_name);
     }
 
 

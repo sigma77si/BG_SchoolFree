@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">БГ Школо</string>
+    <string name="test">Тесты</string>
+    <string name="preparation">Переподготовки</string>
+    <string name="help"> О БГ Школо</string>
+    <string name="title_activity_intro_text">Условие</string>
+    <string name="Intro1Text1">Рассчитывать на следующей странице пальцы не гнутся и нажать соответствующую цифру.</string>
+    <string name="title_activity_see_digit"> Нажмите нужное число</string>
+    <string name="check">Проверить</string>
+
+</resources>

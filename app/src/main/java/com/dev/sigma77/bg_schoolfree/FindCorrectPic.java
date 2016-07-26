@@ -52,12 +52,10 @@ public class FindCorrectPic extends AppCompatActivity implements View.OnClickLis
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
-
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        if (MainActivity.isTest) {
-            getSupportActionBar().setHomeButtonEnabled(false);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        setTitle(R.string.title_activity_see_digit);
+        if (!MainActivity.isTest) {
+            getSupportActionBar().setHomeButtonEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
         Intent mIntent = getIntent();
         testNum = mIntent.getIntExtra("TestNum", 0);
@@ -573,7 +571,7 @@ public class FindCorrectPic extends AppCompatActivity implements View.OnClickLis
 
 
                 }
-            }, 2800);
+            }, 2000);
 
 
         }

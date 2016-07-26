@@ -223,7 +223,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:text="Провери"
+            android:text="@string/check"
             android:id="@+id/btnCheck"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/shapes2"

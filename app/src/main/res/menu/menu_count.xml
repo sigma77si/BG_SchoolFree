@@ -3,5 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.dev.sigma77.kidslearning.CountActivity">
     <item android:id="@+id/action_settings" android:title="@string/help"
-        android:orderInCategory="100" app:showAsAction="never" />
+        android:orderInCategory="100" app:showAsAction="never"></item>
+    <group android:checkableBehavior="single"
+        app:showAsAction="ifRoom"
+        >
+        <item android:id="@+id/bg"
+            android:title="БГ" />
+        <item android:id="@+id/en"
+            android:title="EN" />
+        <item android:id="@+id/ru"
+            android:title="RU" />
+        <item android:id="@+id/de"
+            android:title="DE" />
+    </group>/>
+
+
+
+    />
 </menu>

@@ -45,13 +45,14 @@ public class SimilarityActivity extends AppCompatActivity implements View.OnClic
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
+        setTitle(R.string.title_activity_see_digit);
 
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        if (MainActivity.isTest) {
-            getSupportActionBar().setHomeButtonEnabled(false);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        if (!MainActivity.isTest) {
+
+            getSupportActionBar().setHomeButtonEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
+
         btn1= (ImageButton) findViewById(R.id.btn1);
         btn2= (ImageButton) findViewById(R.id.btn2);
         btn3= (ImageButton) findViewById(R.id.btn3);

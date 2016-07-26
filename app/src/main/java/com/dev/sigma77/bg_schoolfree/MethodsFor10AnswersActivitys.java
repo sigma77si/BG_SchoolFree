@@ -2,23 +2,32 @@ package com.dev.sigma77.bg_schoolfree;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.dev.sigma77.bg_schoolfree.R;
 import com.dev.sigma77.bg_schoolfree.util.Transition;
 import com.dev.sigma77.bg_schoolfree.util.TransitionParams;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Random;
+import java.util.logging.Handler;
 
 /**
  * Created by user on 25.5.2016 г..
@@ -31,6 +40,7 @@ public class MethodsFor10AnswersActivitys extends AppCompatActivity implements V
     Map<Integer, Integer> buttonMap = new HashMap<>();
     Map<Integer, Integer> correctAnswerList = new HashMap<>();
     private static ImageView pic,picMain;
+    LinearLayout bgrLayout;
     private static int currentPic;
     private int correctSound;
     private int wrongSound;
@@ -58,15 +68,14 @@ public class MethodsFor10AnswersActivitys extends AppCompatActivity implements V
         else if(layoutName.equals("Count")){
             setContentView(R.layout.activity_count);
         }
+        bgrLayout=(LinearLayout) findViewById(R.id.bgrLayout) ;
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
-
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        if (MainActivity.isTest) {
-            getSupportActionBar().setHomeButtonEnabled(false);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        setTitle(R.string.title_activity_see_digit);
+        if (!MainActivity.isTest) {
+            getSupportActionBar().setHomeButtonEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
         initiateButtons();
@@ -325,6 +334,63 @@ public class MethodsFor10AnswersActivitys extends AppCompatActivity implements V
         getMenuInflater().inflate(R.menu.menu_count, menu);
         return true;
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        switch (item.getItemId()) {
+            case R.id.bg:
+                item.setChecked(true);
+                selLocale("bg");
+                break;
+            case R.id.en:
+                item.setChecked(true);
+                selLocale("en");
+
+                break;
+            case R.id.ru:
+                item.setChecked(true);
+                selLocale("ru");
+                break;
+            case R.id.de:
+                item.setChecked(true);
+                selLocale("de");
+                break;
+            case R.id.action_settings:
+                startActivity(new Intent(this, HelpActivity.class));
+
+
+            default:
+          //      selLocale("en");
+
+
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
+    private void selLocale(String language) {
+        Locale myLocale =new Locale(language);
+        Resources res=getResources();
+        DisplayMetrics dm =res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale= myLocale;
+        res.updateConfiguration(conf,dm);
+        //     Intent intent=new Intent(this,MainActivity.class);
+//        finish();
+//        startActivity(intent);
+        onConfigurationChanged(conf);
+    }
+    @Override
+    public void onConfigurationChanged(Configuration newConfig)
+    {
+
+        setTitle(R.string.title_activity_intro_text);
+
+        super.onConfigurationChanged(newConfig);
+
+    }
 
     @Override
     public void onClick(View v) {
@@ -343,9 +409,12 @@ public class MethodsFor10AnswersActivitys extends AppCompatActivity implements V
         if(btn==number||btn==answer){
 
                 correctAnswers++;
+
+            bgrLayout.setBackgroundColor(getResources().getColor(R.color.green));
                 sp.play(correctSound, 1, 1, 0, 0, 1);
             } else {
                 sp.play(wrongSound, 1, 1, 0, 0, 1);
+            bgrLayout.setBackgroundColor(getResources().getColor(R.color.red));
             }
             intPicList.remove(currentPic);
             if (intPicList.size() <= 0) {
@@ -373,7 +442,18 @@ public class MethodsFor10AnswersActivitys extends AppCompatActivity implements V
                 Transition.toNextActivity(transitionParams);
 
             } else {
-                getRandomPic();
+                new android.os.Handler().postDelayed(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        bgrLayout.setBackgroundColor(getResources().getColor(R.color.bgr_color));
+                        getRandomPic();
+
+
+                    }
+                }, 2000);
+
+
             }
 
 
@@ -404,9 +484,11 @@ public class MethodsFor10AnswersActivitys extends AppCompatActivity implements V
 
         if (currentPic == answer) {
             correctAnswers++;
+            bgrLayout.setBackgroundColor(getResources().getColor(R.color.green));
             sp.play(correctSound, 1, 1, 0, 0, 1);
         } else {
             sp.play(wrongSound, 1, 1, 0, 0, 1);
+            bgrLayout.setBackgroundColor(getResources().getColor(R.color.red));
         }
         intPicList.remove(currentPic);
         if (intPicList.size() <= 0) {
@@ -434,7 +516,16 @@ public class MethodsFor10AnswersActivitys extends AppCompatActivity implements V
             Transition.toNextActivity(transitionParams);
 
         } else {
-            getRandomPic();
+            new android.os.Handler().postDelayed(new Runnable() {
+
+                @Override
+                public void run() {
+                    bgrLayout.setBackgroundColor(getResources().getColor(R.color.bgr_color));
+                    getRandomPic();
+
+
+                }
+            }, 2000);
         }
 
 
