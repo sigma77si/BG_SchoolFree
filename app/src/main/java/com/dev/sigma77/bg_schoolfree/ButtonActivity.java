@@ -183,7 +183,7 @@ public class ButtonActivity extends AppCompatActivity implements View.OnClickLis
 
 
             default:
-                selLocale("en");
+            //    selLocale("en");
 
 
         }

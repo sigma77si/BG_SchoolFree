@@ -38,6 +38,7 @@ public class IntroTextForAllActivity extends AppCompatActivity {
         setContentView(R.layout.activity_intro_for_all_activitys);
         toolbar= (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
+
         if (!MainActivity.isTest) {
             getSupportActionBar().setHomeButtonEnabled(true);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -397,7 +398,7 @@ public class IntroTextForAllActivity extends AppCompatActivity {
 
 
             default:
-                selLocale("en");
+             //   selLocale("en");
 
 
         }

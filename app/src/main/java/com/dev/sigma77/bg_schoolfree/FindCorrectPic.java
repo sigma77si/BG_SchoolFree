@@ -2,6 +2,8 @@ package com.dev.sigma77.bg_schoolfree;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.SoundPool;
@@ -9,6 +11,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,6 +21,7 @@ import com.dev.sigma77.bg_schoolfree.util.Transition;
 import com.dev.sigma77.bg_schoolfree.util.TransitionParams;
 
 import java.util.Arrays;
+import java.util.Locale;
 
 
 public class FindCorrectPic extends AppCompatActivity implements View.OnClickListener {
@@ -43,6 +47,7 @@ public class FindCorrectPic extends AppCompatActivity implements View.OnClickLis
     private int testNum;
     String gameNameString;
     private Toolbar toolbar;
+    Locale myLocale;
 
 
     @Override
@@ -133,14 +138,59 @@ public class FindCorrectPic extends AppCompatActivity implements View.OnClickLis
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        switch (item.getItemId()) {
+            case R.id.bg:
+                item.setChecked(true);
+                selLocale("bg");
+                break;
+            case R.id.en:
+                item.setChecked(true);
+                selLocale("en");
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+                break;
+            case R.id.ru:
+                item.setChecked(true);
+                selLocale("ru");
+                break;
+            case R.id.de:
+                item.setChecked(true);
+                selLocale("de");
+                break;
+            case R.id.action_settings:
+                startActivity(new Intent(this, HelpActivity.class));
+
+
+            default:
+                //    selLocale("en");
+
+
         }
+        return true;
+    }
 
-        return super.onOptionsItemSelected(item);
+    private void selLocale(String language) {
+        myLocale =new Locale(language);
+        Resources res=getResources();
+        DisplayMetrics dm =res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale= myLocale;
+        res.updateConfiguration(conf,dm);
+        //     Intent intent=new Intent(this,MainActivity.class);
+//        finish();
+//        startActivity(intent);
+        onConfigurationChanged(conf);
+    }
+    @Override
+    public void onConfigurationChanged(Configuration newConfig)
+    {
+
+        setTitle(R.string.title_activity_find_correct_pic);
+
+        super.onConfigurationChanged(newConfig);
+
+
+
+
     }
 
     @Override

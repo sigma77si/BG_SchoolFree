@@ -2,12 +2,15 @@ package com.dev.sigma77.bg_schoolfree;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,6 +25,7 @@ import com.dev.sigma77.bg_schoolfree.util.Transition;
 import com.dev.sigma77.bg_schoolfree.util.TransitionParams;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 
@@ -41,6 +45,7 @@ public class CroppedPicActivity extends AppCompatActivity implements View.OnClic
     LinearLayout layout1, layout2, layoutSpinners;
     Map<Integer, Integer> imgresource = new HashMap<>();
     private Toolbar toolbar;
+    Locale myLocale;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -139,26 +144,55 @@ public class CroppedPicActivity extends AppCompatActivity implements View.OnClic
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.bg:
                 item.setChecked(true);
+                selLocale("bg");
+                break;
             case R.id.en:
                 item.setChecked(true);
+                selLocale("en");
+
+                break;
             case R.id.ru:
                 item.setChecked(true);
+                selLocale("ru");
+                break;
             case R.id.de:
-               item.setChecked(true);
+                item.setChecked(true);
+                selLocale("de");
+                break;
             case R.id.action_settings:
                 startActivity(new Intent(this, HelpActivity.class));
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
 
+
+            default:
+                //    selLocale("en");
+
+
+        }
+        return true;
+    }
+
+    private void selLocale(String language) {
+        myLocale =new Locale(language);
+        Resources res=getResources();
+        DisplayMetrics dm =res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale= myLocale;
+        res.updateConfiguration(conf,dm);
+        //     Intent intent=new Intent(this,MainActivity.class);
+//        finish();
+//        startActivity(intent);
+        onConfigurationChanged(conf);
+    }
+    @Override
+    public void onConfigurationChanged(Configuration newConfig)
+    {
+
+        setTitle(R.string.e_viz_adapter_title);
+        btnCheck.setText(R.string.check);
+        super.onConfigurationChanged(newConfig);
 
     }
 

@@ -39,6 +39,11 @@
     <string name="l_viz_adapter_title">Коя е следващата цифра?</string>
     <string name="m_viz_adapter_title">Кои си приличат? Животни</string>
     <string name="n_viz_adapter_title">Кои си приличат? Предмети</string>
+    <string name="title_activity_test_results">Резултати</string>
+    <string name="title_activity_help">Относно</string>
+    <string name="title_activity_happy_birthday">Кое е числото</string>
+
+
 
     <string name="Intro1Text1">Пребройте на следващата страница пръстите които не са сгънати и натиснете съответната цифра.</string>
     <string name="Intro1Text2">Открийте на следващата страница фигурата на модела в ляво в едно от силуетните изображения от неговата дясна страна и натиснете на него.</string>

@@ -40,10 +40,7 @@ public class PracticeActivity extends AppCompatActivity {
 
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        if (MainActivity.isTest) {
-            getSupportActionBar().setHomeButtonEnabled(false);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        }
+
 
         v = (ImageView) findViewById(R.id.imageView9);
         reciclerView = (RecyclerView) findViewById(R.id.drowerList);

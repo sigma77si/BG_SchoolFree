@@ -233,7 +233,7 @@ public class ClockActivity extends AppCompatActivity implements View.OnClickList
 
 
             default:
-                selLocale("en");
+        //        selLocale("en");
 
 
         }
