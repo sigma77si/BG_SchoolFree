@@ -171,7 +171,7 @@ public class CroppedPicActivity extends AppCompatActivity implements View.OnClic
 
 
         }
-        return true;
+        return super.onOptionsItemSelected(item);
     }
 
     private void selLocale(String language) {

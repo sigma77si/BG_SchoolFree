@@ -187,7 +187,7 @@ public class ButtonActivity extends AppCompatActivity implements View.OnClickLis
 
 
         }
-        return true;
+        return super.onOptionsItemSelected(item);
     }
 
     private void selLocale(String language) {

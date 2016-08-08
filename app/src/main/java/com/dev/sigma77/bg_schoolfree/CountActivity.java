@@ -1,6 +1,6 @@
 package com.dev.sigma77.bg_schoolfree;
 
-import android.app.Activity;
+
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -10,7 +10,7 @@ import android.media.SoundPool;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Layout;
+
 import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -54,8 +54,6 @@ public class CountActivity extends AppCompatActivity implements View.OnClickList
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
-
-
         setTitle(R.string.title_activity_see_digit);
 
         if (!MainActivity.isTest) {
@@ -127,6 +125,7 @@ public class CountActivity extends AppCompatActivity implements View.OnClickList
     }
 
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -167,7 +166,7 @@ public class CountActivity extends AppCompatActivity implements View.OnClickList
 
 
             }
-            return true;
+            return super.onOptionsItemSelected(item);
         }
 
     private void selLocale(String language) {

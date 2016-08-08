@@ -1,6 +1,6 @@
 package com.dev.sigma77.bg_schoolfree;
 
-import android.app.Activity;
+
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -59,9 +59,9 @@ public class FindCorrectPic extends AppCompatActivity implements View.OnClickLis
         setSupportActionBar(toolbar);
         setTitle(R.string.title_activity_see_digit);
         if (!MainActivity.isTest) {
-            getSupportActionBar().setHomeButtonEnabled(true);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
+              getSupportActionBar().setHomeButtonEnabled(true);
+              getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+      }
         Intent mIntent = getIntent();
         testNum = mIntent.getIntExtra("TestNum", 0);
         sceneNum = mIntent.getIntExtra("SceneNum", 0);
@@ -126,6 +126,7 @@ public class FindCorrectPic extends AppCompatActivity implements View.OnClickLis
     }
 
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -165,7 +166,7 @@ public class FindCorrectPic extends AppCompatActivity implements View.OnClickLis
 
 
         }
-        return true;
+        return super.onOptionsItemSelected(item);
     }
 
     private void selLocale(String language) {
@@ -309,7 +310,7 @@ public class FindCorrectPic extends AppCompatActivity implements View.OnClickLis
         numOfAnswers++;
         checkAnswer(pressedBtn, btnIndex);
         blockBtnLine(btnIndex);
-    }
+       }
 
     public void setLayoutColor(View layoutNum, Boolean ifCorrect) {
 

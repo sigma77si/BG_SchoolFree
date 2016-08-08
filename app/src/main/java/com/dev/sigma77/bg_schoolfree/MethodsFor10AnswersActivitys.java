@@ -363,10 +363,7 @@ public class MethodsFor10AnswersActivitys extends AppCompatActivity implements V
 
             default:
           //      selLocale("en");
-
-
         }
-
 
         return super.onOptionsItemSelected(item);
     }
@@ -386,7 +383,7 @@ public class MethodsFor10AnswersActivitys extends AppCompatActivity implements V
     public void onConfigurationChanged(Configuration newConfig)
     {
 
-        setTitle(R.string.title_activity_intro_text);
+        setTitle(R.string.title_activity_see_digit);
 
         super.onConfigurationChanged(newConfig);
 

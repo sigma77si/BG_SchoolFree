@@ -39,10 +39,10 @@ public class IntroTextForAllActivity extends AppCompatActivity {
         toolbar= (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
 
-        if (!MainActivity.isTest) {
-            getSupportActionBar().setHomeButtonEnabled(true);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
+//        if (!MainActivity.isTest) {
+//            getSupportActionBar().setHomeButtonEnabled(true);
+//            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        }
         setTitle(R.string.title_activity_intro_text);
         Intent mIntent = getIntent();
           textToSet = mIntent.getIntExtra("IntroText",0);

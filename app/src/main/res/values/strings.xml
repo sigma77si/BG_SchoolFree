@@ -23,7 +23,7 @@
     <string name="title_activity_memory">Запомни картинките</string>
     <string name="title_activity_clock">Часовник</string>
     <string name="title_activity_similarity">Подобни</string>
-    <string name="title_activity_see_digit">Натисни правилното число</string>
+    <string name="title_activity_see_digit">Натисни правилното</string>
     <string name="title_activity_activity_help">ActivityHelp</string>
     <string name="a_viz_adapter_title">Преброй пръстите</string>
     <string name="b_viz_adapter_title">Открий силуета</string>

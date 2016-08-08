@@ -26,6 +26,16 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".FindCorrectPic"
+            android:label="@string/title_activity_find_correct_pic"
+            android:screenOrientation="portrait"
+            android:configChanges="locale">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"
+                />
+        </activity>
+        <activity
             android:name=".CountActivity"
             android:label="@string/title_activity_count"
             android:screenOrientation="portrait"
@@ -35,15 +45,7 @@
             android:value=".PracticeActivity"
             />
         </activity>
-        <activity
-            android:name=".FindCorrectPic"
-            android:label="@string/title_activity_find_correct_pic"
-            android:screenOrientation="portrait">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".PracticeActivity"
-            />
-    </activity>
+
         <activity
             android:name=".IntroTextForAllActivity"
             android:label="@string/title_activity_intro_text"
@@ -51,16 +53,16 @@
             android:configChanges="locale"/>
         <activity
             android:name=".ButtonActivity"
-
             android:label="@string/title_activity_button"
             android:screenOrientation="portrait"
             android:theme="@style/FullscreenTheme"
             android:configChanges="locale">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".PracticeActivity"
-            />
-    </activity>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PracticeActivity"
+                />
+        </activity>
+
         <activity
             android:name=".CroppedPicActivity"
             android:label="@string/title_activity_cuted_pic"
@@ -106,11 +108,9 @@
         <activity
             android:name=".HelpActivity"
             android:label="@string/title_activity_help"
-            android:screenOrientation="portrait"></activity>
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".PracticeActivity"
-            />
+            android:screenOrientation="portrait">
+        </activity>
+
         <activity
             android:name=".MIdleDigit"
             android:label="@string/title_activity_happy_birthday"
@@ -123,7 +123,7 @@
             android:configChanges="locale">
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value=".MainActivity" />
+            android:value=".PracticeActivity" />
     </activity>
         <activity
             android:name=".ClockActivity"

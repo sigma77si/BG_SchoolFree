@@ -237,7 +237,7 @@ public class ClockActivity extends AppCompatActivity implements View.OnClickList
 
 
         }
-        return true;
+        return super.onOptionsItemSelected(item);
     }
 
     private void selLocale(String language) {
