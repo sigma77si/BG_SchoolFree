@@ -1,11 +1,8 @@
 package com.dev.sigma77.bg_schoolfree;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
@@ -19,7 +16,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.dev.sigma77.bg_schoolfree.R;
 import com.dev.sigma77.bg_schoolfree.util.Transition;
 import com.dev.sigma77.bg_schoolfree.util.TransitionParams;
 
@@ -27,7 +23,6 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Random;
-import java.util.logging.Handler;
 
 /**
  * Created by user on 25.5.2016 г..
@@ -342,32 +337,32 @@ public class MethodsFor10AnswersActivitys extends AppCompatActivity implements V
         switch (item.getItemId()) {
             case R.id.bg:
                 item.setChecked(true);
-                selLocale("bg");
+                setLocale("bg");
                 break;
             case R.id.en:
                 item.setChecked(true);
-                selLocale("en");
+                setLocale("en");
 
                 break;
             case R.id.ru:
                 item.setChecked(true);
-                selLocale("ru");
+                setLocale("ru");
                 break;
             case R.id.de:
                 item.setChecked(true);
-                selLocale("de");
+                setLocale("de");
                 break;
             case R.id.action_settings:
                 startActivity(new Intent(this, HelpActivity.class));
 
 
             default:
-          //      selLocale("en");
+          //      setLocale("en");
         }
 
         return super.onOptionsItemSelected(item);
     }
-    private void selLocale(String language) {
+    private void setLocale(String language) {
         Locale myLocale =new Locale(language);
         Resources res=getResources();
         DisplayMetrics dm =res.getDisplayMetrics();

@@ -32,7 +32,7 @@
             android:configChanges="locale">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"
+                android:value=".PracticeActivity"
                 />
         </activity>
         <activity

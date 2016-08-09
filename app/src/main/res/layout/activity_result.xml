@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Резултат за играта"
+        android:text="@string/game_result"
         android:id="@+id/textResults"
 
         android:layout_gravity="center"/>
@@ -41,7 +41,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Познати: "
+            android:text="@string/correct"
             android:id="@+id/textCorrect"
             android:textSize="20dp"
             />
@@ -59,8 +59,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Точки: "
-            android:id="@+id/textView5"
+            android:text="@string/points"
+            android:id="@+id/textPoints"
             android:textSize="20dp"/>
 
         <TextView
@@ -94,11 +94,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Общ резултат"
+            android:text="@string/final_result"
             android:id="@+id/textTestResult"
             android:layout_gravity="center_vertical"
             android:textSize="20dp"
-            />
+            android:visibility="invisible"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -108,16 +108,18 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:id="@+id/testPoints"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:visibility="invisible"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="точки"
-            android:id="@+id/textPoints2"
+            android:text="@string/points"
+            android:id="@+id/textGamePoints"
             android:layout_gravity="bottom"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:visibility="invisible"/>
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -129,12 +131,13 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Да"
+            android:text="@string/ok"
             android:textSize="20dp"
-            android:id="@+id/button1"
+            android:id="@+id/btnOk"
             android:layout_gravity="bottom"
             android:textColor="@color/accentColor"
-            android:background="@drawable/shapes2"/>
+            android:background="@drawable/shapes2"
+            android:padding="3dp"/>
     </LinearLayout>
 
 

@@ -1,6 +1,8 @@
 package com.dev.sigma77.bg_schoolfree;
 
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.SoundPool;
@@ -8,6 +10,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -15,6 +20,7 @@ import com.dev.sigma77.bg_schoolfree.util.Transition;
 import com.dev.sigma77.bg_schoolfree.util.TransitionParams;
 
 import java.util.Arrays;
+import java.util.Locale;
 
 public class SimilarityActivity extends AppCompatActivity implements View.OnClickListener{
     ImageButton btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn10,btn11,btn12,btn13,btn14,btn15,btn16;
@@ -36,6 +42,7 @@ public class SimilarityActivity extends AppCompatActivity implements View.OnClic
     int btnIndex;
     private int testNum;
     private Toolbar toolbar;
+    Locale  myLocale;
 
 
     @Override
@@ -45,7 +52,7 @@ public class SimilarityActivity extends AppCompatActivity implements View.OnClic
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
-        setTitle(R.string.title_activity_see_digit);
+        setTitle(R.string.i_viz_adapter_title);
 
         if (!MainActivity.isTest) {
 
@@ -111,6 +118,72 @@ public class SimilarityActivity extends AppCompatActivity implements View.OnClic
         setCorrectAnswers(sceneNum);
         Intent mIntent = getIntent();
         testNum = mIntent.getIntExtra("TestNum", 0);
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_button, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        switch (item.getItemId()) {
+            case R.id.bg:
+                item.setChecked(true);
+                selLocale("bg");
+                break;
+            case R.id.en:
+                item.setChecked(true);
+                selLocale("en");
+
+                break;
+            case R.id.ru:
+                item.setChecked(true);
+                selLocale("ru");
+                break;
+            case R.id.de:
+                item.setChecked(true);
+                selLocale("de");
+                break;
+            case R.id.action_settings:
+                startActivity(new Intent(this, HelpActivity.class));
+
+
+            default:
+                //    selLocale("en");
+
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void selLocale(String language) {
+        myLocale =new Locale(language);
+        Resources res=getResources();
+        DisplayMetrics dm =res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale= myLocale;
+        res.updateConfiguration(conf,dm);
+        //     Intent intent=new Intent(this,MainActivity.class);
+//        finish();
+//        startActivity(intent);
+        onConfigurationChanged(conf);
+    }
+    @Override
+    public void onConfigurationChanged(Configuration newConfig)
+    {
+
+        setTitle(R.string.i_viz_adapter_title);
+
+        super.onConfigurationChanged(newConfig);
+
+
+
+
     }
 
     public void  loadScenePic (int sceneNum){

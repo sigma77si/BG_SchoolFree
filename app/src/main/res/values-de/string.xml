@@ -5,6 +5,17 @@
     <string name="preparation">Ausbildung</string>
     <string name="help">über</string>
     <string name="title_activity_intro_text">Erklärung</string>
+    <string name="title_activity_find_correct_pic">Die Antwort finden</string>
+    <string name="points">Punkte </string>
+    <string name="correct">Richtig </string>
+    <string name="title_activity_result">Ergebnis</string>
+    <string name="ok">Ja</string>
+    <string name="game_result">Spiel Ergebnis</string>
+    <string name="final_result">Endergebnis:</string>
+    <string name="test1">Test 1</string>
+    <string name="test2">Test 2</string>
+    <string name="problem">Aufgabe </string>
+
     <string name="Intro1Text1">Zählen Sie die Finger, die nicht gebogen sind, und drücken Sie die entsprechende Zahl.</string>
 
     <string name="a_viz_adapter_title">Zählen Sie die Finger</string>

@@ -57,7 +57,7 @@ public class FindCorrectPic extends AppCompatActivity implements View.OnClickLis
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
-        setTitle(R.string.title_activity_see_digit);
+        setTitle(R.string.title_activity_find_correct_pic);
         if (!MainActivity.isTest) {
               getSupportActionBar().setHomeButtonEnabled(true);
               getSupportActionBar().setDisplayHomeAsUpEnabled(true);

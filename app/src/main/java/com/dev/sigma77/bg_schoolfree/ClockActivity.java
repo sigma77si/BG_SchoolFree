@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -206,6 +207,13 @@ public class ClockActivity extends AppCompatActivity implements View.OnClickList
         startActivity(intent);
     }
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_clock, menu);
+        return true;
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -256,7 +264,7 @@ public class ClockActivity extends AppCompatActivity implements View.OnClickList
     public void onConfigurationChanged(Configuration newConfig)
     {
 
-        setTitle(R.string.title_activity_see_digit);
+        setTitle(R.string.h_viz_adapter_title);
 
         super.onConfigurationChanged(newConfig);
 

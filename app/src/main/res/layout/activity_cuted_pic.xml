@@ -208,7 +208,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:text="провери"
+                android:text="@string/check"
                 android:id="@+id/button1"
                 android:layout_weight="1.2"
                 android:background="@drawable/shapes2"

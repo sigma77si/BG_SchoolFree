@@ -179,6 +179,7 @@ public class IntroTextForAllActivity extends AppCompatActivity {
                 Intent in = new Intent(IntroTextForAllActivity.this, FindCorrectPic.class);
                 in.putExtra("SceneNum", 2);
                 in.putExtra("TestNum", testNum);
+                in.putExtra("SceneName","ShadowPic");
                 startActivity(in);
                 FindCorrectPic.currentGamePoints = 0;
                 FindCorrectPic.correctAnswers = 0;
@@ -187,8 +188,9 @@ public class IntroTextForAllActivity extends AppCompatActivity {
             }
             case 11:{
                 Intent in = new Intent(IntroTextForAllActivity.this, FindCorrectPic.class);
-                in.putExtra("SceneNum", 7);
+                in.putExtra("SceneNum", 2);
                 in.putExtra("TestNum", testNum);
+                in.putExtra("SceneName","NeedlessPic");
                 startActivity(in);
                 CroppedPicActivity.scene = 2;
                 FindCorrectPic.currentGamePoints = 0;

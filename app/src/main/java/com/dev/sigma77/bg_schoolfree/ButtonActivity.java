@@ -52,12 +52,13 @@ public class ButtonActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_button);
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
-        setTitle(R.string.title_activity_button);
+        setTitle(R.string.d_viz_adapter_title);
 
         if (!MainActivity.isTest) {
             getSupportActionBar().setHomeButtonEnabled(true);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
+
 
         btn1 = (ImageButton) findViewById(R.id.imageButton1);
         btn2 = (ImageButton) findViewById(R.id.imageButton2);
@@ -163,34 +164,34 @@ public class ButtonActivity extends AppCompatActivity implements View.OnClickLis
         switch (item.getItemId()) {
             case R.id.bg:
                 item.setChecked(true);
-                selLocale("bg");
+                setLocale("bg");
                 break;
             case R.id.en:
                 item.setChecked(true);
-                selLocale("en");
+                setLocale("en");
 
                 break;
             case R.id.ru:
                 item.setChecked(true);
-                selLocale("ru");
+                setLocale("ru");
                 break;
             case R.id.de:
                 item.setChecked(true);
-                selLocale("de");
+                setLocale("de");
                 break;
             case R.id.action_settings:
                 startActivity(new Intent(this, HelpActivity.class));
 
 
             default:
-            //    selLocale("en");
+            //    setLocale("en");
 
 
         }
         return super.onOptionsItemSelected(item);
     }
 
-    private void selLocale(String language) {
+    private void setLocale(String language) {
         myLocale =new Locale(language);
         Resources res=getResources();
         DisplayMetrics dm =res.getDisplayMetrics();
@@ -206,7 +207,7 @@ public class ButtonActivity extends AppCompatActivity implements View.OnClickLis
     public void onConfigurationChanged(Configuration newConfig)
     {
 
-        setTitle(R.string.title_activity_button);
+        setTitle(R.string.d_viz_adapter_title);
         check.setText(R.string.check);
         super.onConfigurationChanged(newConfig);
 

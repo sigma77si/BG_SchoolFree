@@ -6,6 +6,17 @@
     <string name="help">About</string>
     <string name="check">Check</string>
     <string name="title_activity_intro_text">Explanation</string>
+    <string name="title_activity_find_correct_pic">Find the answer?</string>
+    <string name="title_activity_result">Result</string>
+    <string name="points">Points </string>
+    <string name="correct">Correct </string>
+    <string name="ok">OK</string>
+    <string name="final_result">Final result:</string>
+    <string name="game_result">Game result</string>
+    <string name="test1">Test 1</string>
+    <string name="test2">Test 2</string>
+    <string name="problem">Problem </string>
+
     <string name="Intro1Text1">Count the toes, which are not folded and press the corresponding button.</string>
 
     <string name="a_viz_adapter_title">Count Fingers</string>

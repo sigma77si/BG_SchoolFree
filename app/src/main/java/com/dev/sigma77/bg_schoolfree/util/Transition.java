@@ -66,7 +66,7 @@ public class Transition {
                         introTalkId = R.raw.zvukpravilno;
                         exerciseNumber = 9;
                     } else if (transitionParams.getpActivity().getClass() == FindCorrectPic.class
-                            && ((FindCorrectPic) transitionParams.getpActivity()).getSceneNum() == 2) {
+                            && ((FindCorrectPic) transitionParams.getpActivity()).getSceneName().equals("ShadowPic")) {
                         introTextId = R.string.Intro1Text7;
                         introPicId = R.drawable.count_on_fingers_05;
                         introTalkId = R.raw.zvukpravilno;
@@ -77,7 +77,7 @@ public class Transition {
                         introTalkId = R.raw.zvukpravilno;
                         exerciseNumber = 11;
                     } else if (transitionParams.getpActivity().getClass() == FindCorrectPic.class
-                            && ((FindCorrectPic) transitionParams.getpActivity()).getSceneNum() == 7) {
+                            && ((FindCorrectPic) transitionParams.getpActivity()).getSceneName().equals("NeedlessPic")) {
                         introTextId = R.string.Intro1Text12;
                         introPicId = R.drawable.cutted_boy_main;
                         introTalkId = R.raw.zvukpravilno;

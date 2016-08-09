@@ -3,6 +3,8 @@ package com.dev.sigma77.bg_schoolfree;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Handler;
@@ -10,6 +12,7 @@ import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,11 +25,12 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 
 
 public class ResultActivity extends ActionBarActivity implements View.OnClickListener {
-    TextView textResults, textCorrect, textTestResult, currentCorrectResult,points;
+    TextView textResults, textCorrect,textPoints, textTestResult, currentCorrectResult,points,textGamePoints;
     public static TextView testResultView;
     Button ok;
     ImageView star;
@@ -35,6 +39,7 @@ public class ResultActivity extends ActionBarActivity implements View.OnClickLis
    public static int result;
     public static boolean isLastTest;
     MediaPlayer mp;
+    Locale myLocale;
 
   //  List<String> correctAnswersSet = new ArrayList<>();
    // List<String> gamePointsSet = new ArrayList<>();
@@ -46,22 +51,24 @@ public class ResultActivity extends ActionBarActivity implements View.OnClickLis
         setContentView(R.layout.activity_result);
         textResults = (TextView) findViewById(R.id.textResults);
         textCorrect = (TextView) findViewById(R.id.textCorrect);
+        textPoints = (TextView) findViewById(R.id.textPoints);
+        textGamePoints = (TextView) findViewById(R.id.textGamePoints);
         textTestResult = (TextView) findViewById(R.id.textTestResult);
         currentCorrectResult = (TextView) findViewById(R.id.currentCorrectResult);
         testResultView = (TextView) findViewById(R.id.testPoints);
         testResultLayout= (LinearLayout) findViewById(R.id.testResultLayout);
         points = (TextView) findViewById(R.id.points);
-        ok= (Button) findViewById(R.id.button1);
+        ok= (Button) findViewById(R.id.btnOk);
         star= (ImageView) findViewById(R.id.imgStar);
         ok.setOnClickListener(this);
         toolbar= (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
+        setTitle(R.string.title_activity_result);
 
-      //  getSupportActionBar().setHomeButtonEnabled(true);
-    //    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Intent mIntent = getIntent();
-        if(MainActivity.isTest==false){
-            ResultActivity.testResultLayout.setVisibility(View.INVISIBLE);
+        if (!MainActivity.isTest) {
+            getSupportActionBar().setHomeButtonEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
        int gamePoints = mIntent.getIntExtra("GamePoints", 0);
         int gameCorrectAnswers = mIntent.getIntExtra("CorrectAnswers", 0);
@@ -160,24 +167,72 @@ public class ResultActivity extends ActionBarActivity implements View.OnClickLis
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        switch (item.getItemId()) {
+            case R.id.bg:
+                item.setChecked(true);
+                setLocale("bg");
+                break;
+            case R.id.en:
+                item.setChecked(true);
+                setLocale("en");
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        if (id == android.R.id.home) {
-            NavUtils.navigateUpFromSameTask(this);
-        }
+                break;
+            case R.id.ru:
+                item.setChecked(true);
+                setLocale("ru");
+                break;
+            case R.id.de:
+                item.setChecked(true);
+                setLocale("de");
+                break;
+            case R.id.action_settings:
+                startActivity(new Intent(this, HelpActivity.class));
 
+
+            default:
+                //    setLocale("en");
+
+
+        }
         return super.onOptionsItemSelected(item);
+    }
+    private void setLocale(String language) {
+        myLocale =new Locale(language);
+        Resources res=getResources();
+        DisplayMetrics dm =res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale= myLocale;
+        res.updateConfiguration(conf,dm);
+        //     Intent intent=new Intent(this,MainActivity.class);
+//        finish();
+//        startActivity(intent);
+        onConfigurationChanged(conf);
+    }
+    @Override
+    public void onConfigurationChanged(Configuration newConfig)
+    {
+
+        setTitle(R.string.title_activity_result);
+        textResults.setText(R.string.game_result);
+        textCorrect.setText(R.string.correct);
+        textPoints.setText(R.string.points);
+        textTestResult.setText(R.string.final_result);
+        textGamePoints.setText(R.string.points);
+        ok.setText(R.string.ok);
+
+        super.onConfigurationChanged(newConfig);
+
+
+
+
+
     }
 
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.button1:{
+            case R.id.btnOk:{
                 if(isLastTest==true){
 
                     Intent in = new Intent(this, TestResultsActivity.class);

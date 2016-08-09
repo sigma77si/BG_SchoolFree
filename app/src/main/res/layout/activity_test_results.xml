@@ -48,7 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Познати "
+                android:text="@string/correct"
                 android:id="@+id/textView4"
                 android:layout_column="1"
                 android:gravity="center"/>
@@ -57,7 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Точки"
+                android:text="@string/points"
                 android:id="@+id/textView6"
                 android:layout_column="2"
                 android:gravity="center"/>
@@ -230,7 +230,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Общо точки :"
+                android:text="@string/final_result"
                 android:id="@+id/textView7"
                 android:layout_column="0"
                 android:layout_span="2"/>
@@ -283,7 +283,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ДА"
+        android:text="@string/ok"
         android:id="@+id/btnOk"
         android:layout_gravity="center_horizontal"
         android:textColor="@color/accentColor"

@@ -8,5 +8,17 @@
     <string name="Intro1Text1">Рассчитывать на следующей странице пальцы не гнутся и нажать соответствующую цифру.</string>
     <string name="title_activity_see_digit"> Нажмите нужное число</string>
     <string name="check">Проверить</string>
+    <string name="title_activity_find_correct_pic">Найти ответ</string>
+    <string name="points">Очки </string>
+    <string name="correct">Правильный </string>
+    <string name="ok">ДА</string>
+    <string name="title_activity_result">Результат </string>
+    <string name="game_result">Результат игры</string>
+    <string name="final_result">Конечный результат:</string>
+    <string name="problem">Задача </string>
+
+    <string name="test1">Тест 1</string>
+    <string name="test2">Тест 2</string>
+
 
 </resources>
