@@ -2,10 +2,10 @@
 <resources>
     <string name="app_name">БГ Школо</string>
     <string name="test">Тесты</string>
-    <string name="preparation">Переподготовки</string>
+    <string name="preparation">Подготовка</string>
     <string name="help"> О БГ Школо</string>
     <string name="title_activity_intro_text">Условие</string>
-    <string name="Intro1Text1">Рассчитывать на следующей странице пальцы не гнутся и нажать соответствующую цифру.</string>
+
     <string name="title_activity_see_digit"> Нажмите нужное число</string>
     <string name="check">Проверить</string>
     <string name="title_activity_find_correct_pic">Найти ответ</string>
@@ -19,6 +19,70 @@
 
     <string name="test1">Тест 1</string>
     <string name="test2">Тест 2</string>
+    <string name="a_viz_adapter_title">Пересчитайте пальцы</string>
+    <string name="b_viz_adapter_title">Найти теневое изображение</string>
+    <string name="c_viz_adapter_title">Найти лишнюю картинку</string>
+    <string name="d_viz_adapter_title">Найди одинаковые</string>
+    <string name="e_viz_adapter_title">Соберите рисунок</string>
+    <string name="f_viz_adapter_title">Пересчитайте сложенном пальцы</string>
+    <string name="g_viz_adapter_title">Память</string>
+    <string name="h_viz_adapter_title">Сколько времени?</string>
+    <string name="i_viz_adapter_title">Найти похожие</string>
+    <string name="j_viz_adapter_title">Какое это число?</string>
+    <string name="k_viz_adapter_title">Сколько квадратов?</string>
+    <string name="l_viz_adapter_title">Какая следующая цифра?</string>
+    <string name="m_viz_adapter_title">Найти похожие животные</string>
+    <string name="n_viz_adapter_title">Найти похожие вещи</string>
+
+
+    <string name="Intro1Text1">Пересчитайте пальцы, которые не сложенные и нажмите соответствующую число.</string>
+    <string name="Intro1Text2">Найдите тень фигуры и нажмите ее.</string>
+    <string name="Intro1Text3">Одна из четырех картинок не подходит к остальным. Нажмите на нее.</string>
+    <string name="Intro1Text4">Найдите три одинаковые кнопки. Нажмите их и после этого нажмите кнопку "проверить".(У вас нет возможности исправить ответ)</string>
+    <string name="Intro1Text7">Пересчитайте  пальцы которые СЛОЖЕННЫЕ и нажмите соответствующую число.</string>
+    <string name="Intro1Text5">Расположите части картины по номерам снизу вверх. Потом нажмите кнопку "проверить".</string>
+   <string name="Intro1Text12"> Расположите части картины по номерам снизу вверх. Потом нажмите кнопку "проверить".</string>
+    <string name="Intro1Text13">Запоминайте картинки, которые будут отображаться на следующей странице. Через 30 секунд будет показана другая страница.
+Нажмите на картинки, которые вы запомнили.</string>
+    <string name="Intro1Text14">Что показывает часы? Нажмите на правильный ответ. </string>
+    <string name="Intro1Text15">Пара картинки слева имеют отношение. Найдите одна из пары справа, которая имеют такое же отношение. </string>
+    <string name="Intro1Text16">Найдите число, спрятанное среди переплетенных линий и выберите правильный ответ</string>
+    <string name="Intro1Text18">Найдите все квадраты и нажмите соответствующую число.
+       </string>
+    <string name="Intro1Text19">Угадайте какая должна быть следующая цифра.</string>
+    <string name="Intro1Text20">Какая рисунка с доски соответствует картинке ниже? Выберите соответствующее число.(См. пример ниже)</string>
+    <string name="Intro1Text21">Для строительстве одного кубика требуется 8(восемь) кирпичей. Сколько еще кирпичей должны быть добавлены, чтобы завершить кубиками</string>
+    <string name="Intro1Text22">Исчислите, сколько кубиков включает соответствующую фигуру и нажми на эту цифру.</string>
+    <string name="Intro1Text23">Нажмите на ту группу из трех цифр, при которых средняя цифра меньше, чем остальные две, и пропустить всех остальных групп.</string>
+    <string name="helpText"> RU Приложението \"БГ ученик\" е сбор от упражнения за деца в предучилищна възраст , които развиват всички основни познавателни способности - мислене, внимание, памет, въображение, и др.\n</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_count">Преброй сгънатите пръсти</string>
+    <string name="title_activity_button">Открий еднаквите</string>
+    <string name="title_activity_cuted_pic">Сглоби</string>
+
+    <string name="introtext">Условие</string>
+    <string name="title_activity_find_uncorrect_pic">Открий отговора</string>
+
+    <string name="next">next</string>
+    <string name="title_activity_practice">Подготовка</string>
+    <string name="title_activity_test">Тестове</string>
+    <string name="title_activity_tests">Тестове</string>
+    <string name="title_activity_memory">Запомни картинките</string>
+    <string name="title_activity_clock">Часовник</string>
+    <string name="title_activity_similarity">Подобни</string>
+    <string name="title_activity_test_results">Резултати</string>
+    <string name="title_activity_help">Относно</string>
+
+    <string name="title_activity_happy_birthday">Кое е числото?</string>
+    <string-array name="num">
+        <item>\?</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+
+    </string-array>
 
 
 </resources>

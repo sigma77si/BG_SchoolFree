@@ -3,6 +3,7 @@ package com.dev.sigma77.bg_schoolfree.util;
 import android.os.Handler;
 
 import com.dev.sigma77.bg_schoolfree.ButtonActivity;
+import com.dev.sigma77.bg_schoolfree.ClockActivity;
 import com.dev.sigma77.bg_schoolfree.CountActivity;
 import com.dev.sigma77.bg_schoolfree.CroppedPicActivity;
 import com.dev.sigma77.bg_schoolfree.FindCorrectPic;
@@ -25,29 +26,31 @@ public class Transition {
         int introTalkId = 0;
         boolean isNextExerciseExisting = true;
         if (MainActivity.isTest == true) {
+            Class currentActivity=transitionParams.getpActivity().getClass();
             if (testNumber == 1) {
-                if (transitionParams.getpActivity().getClass() == MethodsFor10AnswersActivitys.class
+
+                if (currentActivity == MethodsFor10AnswersActivitys.class
                         && ((MethodsFor10AnswersActivitys) transitionParams.getpActivity()).getGameName().equals("Fingers"))
  {
                     introTextId = R.string.Intro1Text3;
                     introPicId = R.drawable.needless_pic_intro;
                     introTalkId = R.raw.zvukpravilno;
                     exerciseNumber = 2;
-                } else if (transitionParams.getpActivity().getClass() == FindCorrectPic.class
+                } else if (currentActivity == FindCorrectPic.class
                         && ((FindCorrectPic) transitionParams.getpActivity()).getSceneNum() == 1
                 && ((FindCorrectPic) transitionParams.getpActivity()).getSceneName().equals("ShadowPic")){
                     introTextId = R.string.Intro1Text1;
                     introPicId = R.drawable.count_on_fingers_05;
                     introTalkId = R.raw.zvukpravilno;
                     exerciseNumber = 1;
-                } else if (transitionParams.getpActivity().getClass() == FindCorrectPic.class
+                } else if (currentActivity == FindCorrectPic.class
                         && ((FindCorrectPic) transitionParams.getpActivity()).getSceneNum() == 1
                 && ((FindCorrectPic) transitionParams.getpActivity()).getSceneName().equals("NeedlessPic")){
                     introTextId = R.string.Intro1Text5;
                     introPicId = R.drawable.pear_main;
                     introTalkId = R.raw.zvukpravilno;
                     exerciseNumber = 5;
-                } else if (transitionParams.getpActivity().getClass() == CroppedPicActivity.class) {
+                } else if (currentActivity == CroppedPicActivity.class) {
                     introTextId = R.string.Intro1Text4;
                     introPicId = R.drawable.buttons_example;
                     introTalkId = R.raw.zvukpravilno;
@@ -56,27 +59,28 @@ public class Transition {
                     isNextExerciseExisting = false;
                 }
             }
-        }
 
-            if (MainActivity.isTest == true) {
-                if (testNumber == 2) {
-                    if (transitionParams.getpActivity().getClass() == CountActivity.class) {
+               else if (testNumber == 2) {
+                    if (currentActivity == ClockActivity.class) {
+//                            FindCorrectPic.class
+//                            && ((FindCorrectPic) transitionParams.getpActivity()).getSceneName().equals("ShadowPic")
+
+                    introTextId = R.string.Intro1Text16;
+                    introPicId = R.drawable.digit_example;
+                    introTalkId = R.raw.zvukpravilno;
+                    exerciseNumber = 16;
+                    } else if (currentActivity == MethodsFor10AnswersActivitys.class
+                            && ((MethodsFor10AnswersActivitys) transitionParams.getpActivity()).getGameName().equals("Digit")) {
                         introTextId = R.string.Intro1Text4;
                         introPicId = R.drawable.buttons_example;
                         introTalkId = R.raw.zvukpravilno;
                         exerciseNumber = 9;
-                    } else if (transitionParams.getpActivity().getClass() == FindCorrectPic.class
-                            && ((FindCorrectPic) transitionParams.getpActivity()).getSceneName().equals("ShadowPic")) {
-                        introTextId = R.string.Intro1Text7;
-                        introPicId = R.drawable.count_on_fingers_05;
-                        introTalkId = R.raw.zvukpravilno;
-                        exerciseNumber = 7;
-                    } else if (transitionParams.getpActivity().getClass() == ButtonActivity.class ){
+                    }  else if (currentActivity == ButtonActivity.class ){
                         introTextId = R.string.Intro1Text3;
                         introPicId =  R.drawable.needless_pic_intro;
                         introTalkId = R.raw.zvukpravilno;
                         exerciseNumber = 11;
-                    } else if (transitionParams.getpActivity().getClass() == FindCorrectPic.class
+                    } else if (currentActivity == FindCorrectPic.class
                             && ((FindCorrectPic) transitionParams.getpActivity()).getSceneName().equals("NeedlessPic")) {
                         introTextId = R.string.Intro1Text12;
                         introPicId = R.drawable.cutted_boy_main;

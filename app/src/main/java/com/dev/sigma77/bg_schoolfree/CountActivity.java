@@ -225,7 +225,7 @@ public class CountActivity extends AppCompatActivity implements View.OnClickList
 
         if (currentPic == answer) {
             correctAnswers++;
-            bgrLayout.setBackgroundColor(getResources().getColor(R.color.green));
+            bgrLayout.setBackgroundColor(Color.GREEN);
             sp.play(correctSound, 1, 1, 0, 0, 1);
         } else {
             bgrLayout.setBackgroundColor(Color.RED);
@@ -257,16 +257,17 @@ public class CountActivity extends AppCompatActivity implements View.OnClickList
             Transition.toNextActivity(transitionParams);
 
         } else {
+            getRandomPic();
             new android.os.Handler().postDelayed(new Runnable() {
 
                 @Override
                 public void run() {
                     bgrLayout.setBackgroundColor(getResources().getColor(R.color.bgr_color));
-                    getRandomPic();
+
 
 
                 }
-            }, 2000);
+            }, 300);
         }
 
 

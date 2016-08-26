@@ -11,6 +11,7 @@ import android.os.Handler;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.view.Menu;
@@ -29,7 +30,7 @@ import java.util.Locale;
 import java.util.Set;
 
 
-public class ResultActivity extends ActionBarActivity implements View.OnClickListener {
+public class ResultActivity extends AppCompatActivity implements View.OnClickListener {
     TextView textResults, textCorrect,textPoints, textTestResult, currentCorrectResult,points,textGamePoints;
     public static TextView testResultView;
     Button ok;

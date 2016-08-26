@@ -49,6 +49,7 @@ public class ClockActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clock);
 
+
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
         setTitle(R.string.h_viz_adapter_title);
@@ -185,6 +186,9 @@ public class ClockActivity extends AppCompatActivity implements View.OnClickList
             count++;
         }
         else {
+            btn1.setClickable(false);
+            btn2.setClickable(false);
+            btn3.setClickable(false);
             boolean isEnd = true;
             if(correctAnswers==12){
                 currentGamePoints=1;

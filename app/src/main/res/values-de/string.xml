@@ -16,7 +16,6 @@
     <string name="test2">Test 2</string>
     <string name="problem">Aufgabe </string>
 
-    <string name="Intro1Text1">Zählen Sie die Finger, die nicht gebogen sind, und drücken Sie die entsprechende Zahl.</string>
 
     <string name="a_viz_adapter_title">Zählen Sie die Finger</string>
     <string name="b_viz_adapter_title">Finden Sie den Schatten</string>
@@ -34,5 +33,51 @@
     <string name="n_viz_adapter_title">Finden Sie ähnliche Artikel</string>
     <string name="title_activity_see_digit">Drücken Sie die richtige Taste</string>
     <string name="check">überprüfen</string>
-    überprüfen
+    <string name="Intro1Text1">Zählen Sie die Finger, die nicht gebogen sind, und drücken Sie die entsprechende Zahl..</string>
+    <string name="Intro1Text2"> DE Find the figure of the model on the left in one of the shadow images on the right side of it and press it.</string>
+    <string name="Intro1Text3">DE  One of the four pictures does not fit the others. Find it and press it.</string>
+    <string name="Intro1Text4"> DE Find the three identical buttons. Press them and after that press the "check" button.(You don not have a chance for undo if a button is pressed.)</string>
+    <string name="Intro1Text7"> DE Count the toes, which ARE folded and press the corresponding button.</string>
+    <string name="Intro1Text5"> Positionieren Sie den Teil des Bildes durch die zahlen "von unten".</string>
+   <string name="Intro1Text12"> Positionieren Sie den Teil des Bildes durch die zahlen "von unten".</string>
+    <string name="Intro1Text13">DE  Remember the pictures that will be displayed on the next page. After 30 seconds will be shown another page.
+Click on the pictures you remembered.</string>
+    <string name="Intro1Text14">DE What is the time? Choose the correct answer. </string>
+    <string name="Intro1Text15">DE The two images on the left have a relation. Find one of the couples on the right, which two pictures have the same relation. </string>
+    <string name="Intro1Text16">Suchen Sie eine Zahl, die versteckt unter den verschlungenen Linien und wählen Sie die richtige Antwort.</string>
+    <string name="Intro1Text18">Finden Sie alle Quadrate und klicken Sie auf die entsprechende Nummer. </string>
+    <string name="Intro1Text19">Ratet mal, was muss die nächste Zahl.</string>
+    <string name="Intro1Text20">DE What picture from the board corresponds to the picture below? Choose the corresponding number.(See the example below)</string>
+    <string name="Intro1Text21">DE For the construction of a cube requires 8(eight) bricks. How many bricks must be added to complete cubes.</string>
+    <string name="Intro1Text22">DE How many blocks includes in the figure. Press the corresponding button</string>
+    <string name="Intro1Text23">DE Click on the group of three digits in which the middle digit is lower than the other two, and skip all other groups.</string>
+    <string name="helpText"> DE Приложението \"БГ ученик\" е сбор от упражнения за деца в предучилищна възраст , които развиват всички основни познавателни способности - мислене, внимание, памет, въображение, и др.\n</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_count">Преброй сгънатите пръсти</string>
+    <string name="title_activity_button">Открий еднаквите</string>
+    <string name="title_activity_cuted_pic">Сглоби</string>
+
+    <string name="introtext">Условие</string>
+    <string name="title_activity_find_uncorrect_pic">Открий отговора</string>
+
+    <string name="next">next</string>
+    <string name="title_activity_practice">Подготовка</string>
+    <string name="title_activity_test">Тестове</string>
+    <string name="title_activity_tests">Тестове</string>
+    <string name="title_activity_memory">Запомни картинките</string>
+    <string name="title_activity_clock">Часовник</string>
+    <string name="title_activity_similarity">Подобни</string>
+    <string name="title_activity_test_results">Резултати</string>
+    <string name="title_activity_help">Относно</string>
+
+    <string name="title_activity_happy_birthday">Кое е числото?</string>
+    <string-array name="num">
+        <item>\?</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+
+    </string-array>
 </resources>

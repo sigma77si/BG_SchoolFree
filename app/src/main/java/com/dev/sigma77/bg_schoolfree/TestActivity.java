@@ -24,7 +24,7 @@ public class TestActivity extends AppCompatActivity {
     private Toolbar toolbar;
     RecyclerView reciclerView;
     private VizAdapter adapter;
-    Locale  myLocale;
+    Locale myLocale;
 
     public TestActivity() {
         super();
@@ -39,14 +39,14 @@ public class TestActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setTitle(R.string.test);
 
-        if (!MainActivity.isTest) {
+//        if (!MainActivity.isTest) {
             getSupportActionBar().setHomeButtonEnabled(true);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
+//        }
 
-        v=(ImageView)findViewById(R.id.imageView9);
+        v = (ImageView) findViewById(R.id.imageView9);
         reciclerView = (RecyclerView) findViewById(R.id.drowerList);
-        adapter = new VizAdapter(this, getData(),"Test");
+        adapter = new VizAdapter(this, getData(), "Test");
         reciclerView.setAdapter(adapter);
         reciclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -56,7 +56,7 @@ public class TestActivity extends AppCompatActivity {
         List<DataInformation> data = new ArrayList<>();
         int[] icons = {
                 R.drawable.test_ikon,
-              R.drawable.mushroom1_small
+                R.drawable.mushroom1_small
         };
         String[] titles = {
                 getResources().getString(R.string.test1),
@@ -116,20 +116,20 @@ public class TestActivity extends AppCompatActivity {
     }
 
     private void setLocale(String language) {
-        myLocale =new Locale(language);
-        Resources res=getResources();
-        DisplayMetrics dm =res.getDisplayMetrics();
+        myLocale = new Locale(language);
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
         Configuration conf = res.getConfiguration();
-        conf.locale= myLocale;
-        res.updateConfiguration(conf,dm);
+        conf.locale = myLocale;
+        res.updateConfiguration(conf, dm);
         //     Intent intent=new Intent(this,MainActivity.class);
 //        finish();
 //        startActivity(intent);
         onConfigurationChanged(conf);
     }
+
     @Override
-    public void onConfigurationChanged(Configuration newConfig)
-    {
+    public void onConfigurationChanged(Configuration newConfig) {
 
         adapter = new VizAdapter(this, getData(), "Test");
         reciclerView.setAdapter(adapter);
@@ -139,6 +139,10 @@ public class TestActivity extends AppCompatActivity {
         super.onConfigurationChanged(newConfig);
 
     }
+
+
+
+
     @Override
     protected void onPostResume() {
         super.onPostResume();

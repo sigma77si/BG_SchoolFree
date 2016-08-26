@@ -434,16 +434,15 @@ public class MethodsFor10AnswersActivitys extends AppCompatActivity implements V
                 Transition.toNextActivity(transitionParams);
 
             } else {
+                getRandomPic();
                 new android.os.Handler().postDelayed(new Runnable() {
 
                     @Override
                     public void run() {
                         bgrLayout.setBackgroundColor(getResources().getColor(R.color.bgr_color));
-                        getRandomPic();
-
 
                     }
-                }, 2000);
+                }, 300);
 
 
             }

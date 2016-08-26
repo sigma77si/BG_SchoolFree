@@ -127,9 +127,15 @@ public class VizAdapter extends RecyclerView.Adapter<VizAdapter.MyViewHolder> {
                         MainActivity.isTest = true;
 
                         Intent in = new Intent(context, IntroTextForAllActivity.class);
-                        in.putExtra("IntroText", R.string.Intro1Text2);
-                        in.putExtra("ImageToLoad", R.drawable.shadow_intro_pic);
-                        in.putExtra("ExerciseNum", 10);
+                        in.putExtra("IntroText", R.string.Intro1Text14);
+                        in.putExtra("ImageToLoad", R.drawable.clock1);
+                        in.putExtra("ExerciseNum", 14);
+
+
+
+//                        in.putExtra("IntroText", R.string.Intro1Text2);
+//                        in.putExtra("ImageToLoad", R.drawable.shadow_intro_pic);
+//                        in.putExtra("ExerciseNum", 10);
                         in.putExtra("TestNum", 2);
                         in.putExtra("IntroReading", R.raw.zvukpravilno);
                         MainActivity.correctAnswersList.clear();
