@@ -8,14 +8,14 @@
     <group android:checkableBehavior="single"
         app:showAsAction="ifRoom"
         >
-        <item android:id="@+id/bg"
-            android:title="БГ" />
-        <item android:id="@+id/en"
-            android:title="EN" />
-        <item android:id="@+id/ru"
-            android:title="RU" />
-        <item android:id="@+id/de"
-            android:title="DE" />
+        <!--<item android:id="@+id/bg"-->
+            <!--android:title="БГ" />-->
+        <!--<item android:id="@+id/en"-->
+            <!--android:title="EN" />-->
+        <!--<item android:id="@+id/ru"-->
+            <!--android:title="RU" />-->
+        <!--<item android:id="@+id/de"-->
+            <!--android:title="DE" />-->
     </group>/>
 
 

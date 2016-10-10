@@ -169,23 +169,23 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
-            case R.id.bg:
-                item.setChecked(true);
-                setLocale("bg");
-                break;
-            case R.id.en:
-                item.setChecked(true);
-                setLocale("en");
-
-                break;
-            case R.id.ru:
-                item.setChecked(true);
-                setLocale("ru");
-                break;
-            case R.id.de:
-                item.setChecked(true);
-                setLocale("de");
-                break;
+//            case R.id.bg:
+//                item.setChecked(true);
+//                setLocale("bg");
+//                break;
+//            case R.id.en:
+//                item.setChecked(true);
+//                setLocale("en");
+//
+//                break;
+//            case R.id.ru:
+//                item.setChecked(true);
+//                setLocale("ru");
+//                break;
+//            case R.id.de:
+//                item.setChecked(true);
+//                setLocale("de");
+//                break;
             case R.id.action_settings:
                 startActivity(new Intent(this, HelpActivity.class));
 

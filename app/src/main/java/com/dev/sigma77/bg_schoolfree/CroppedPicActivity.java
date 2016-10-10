@@ -75,10 +75,10 @@ public class CroppedPicActivity extends AppCompatActivity implements View.OnClic
 
 
       setArrayAdapters();
-        bgM= (MenuItem) findViewById(R.id.bg);
-        enM= (MenuItem) findViewById(R.id.en);
-        ruM= (MenuItem) findViewById(R.id.ru);
-        deM= (MenuItem) findViewById(R.id.de);
+//        bgM= (MenuItem) findViewById(R.id.bg);
+//        enM= (MenuItem) findViewById(R.id.en);
+//        ruM= (MenuItem) findViewById(R.id.ru);
+//        deM= (MenuItem) findViewById(R.id.de);
        // bg.setChecked(true);
 
         btnCheck = (Button) findViewById(R.id.button1);
@@ -145,23 +145,23 @@ public class CroppedPicActivity extends AppCompatActivity implements View.OnClic
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
-            case R.id.bg:
-                item.setChecked(true);
-                selLocale("bg");
-                break;
-            case R.id.en:
-                item.setChecked(true);
-                selLocale("en");
-
-                break;
-            case R.id.ru:
-                item.setChecked(true);
-                selLocale("ru");
-                break;
-            case R.id.de:
-                item.setChecked(true);
-                selLocale("de");
-                break;
+//            case R.id.bg:
+//                item.setChecked(true);
+//                selLocale("bg");
+//                break;
+//            case R.id.en:
+//                item.setChecked(true);
+//                selLocale("en");
+//
+//                break;
+//            case R.id.ru:
+//                item.setChecked(true);
+//                selLocale("ru");
+//                break;
+//            case R.id.de:
+//                item.setChecked(true);
+//                selLocale("de");
+//                break;
             case R.id.action_settings:
                 startActivity(new Intent(this, HelpActivity.class));
 

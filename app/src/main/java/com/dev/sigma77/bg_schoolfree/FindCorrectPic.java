@@ -140,23 +140,23 @@ public class FindCorrectPic extends AppCompatActivity implements View.OnClickLis
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
-            case R.id.bg:
-                item.setChecked(true);
-                selLocale("bg");
-                break;
-            case R.id.en:
-                item.setChecked(true);
-                selLocale("en");
-
-                break;
-            case R.id.ru:
-                item.setChecked(true);
-                selLocale("ru");
-                break;
-            case R.id.de:
-                item.setChecked(true);
-                selLocale("de");
-                break;
+//            case R.id.bg:
+//                item.setChecked(true);
+//                selLocale("bg");
+//                break;
+//            case R.id.en:
+//                item.setChecked(true);
+//                selLocale("en");
+//
+//                break;
+//            case R.id.ru:
+//                item.setChecked(true);
+//                selLocale("ru");
+//                break;
+//            case R.id.de:
+//                item.setChecked(true);
+//                selLocale("de");
+//                break;
             case R.id.action_settings:
                 startActivity(new Intent(this, HelpActivity.class));
 
