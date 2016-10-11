@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
             default:
-                selLocale("en");
+              //  selLocale("en");
 
 
         }
