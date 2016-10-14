@@ -119,15 +119,15 @@ public class CroppedPicActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void setArrayAdapters() {
-        ArrayAdapter adapter2 = ArrayAdapter.createFromResource(this, R.array.num, android.R.layout.simple_spinner_item);
+        ArrayAdapter adapter2 = ArrayAdapter.createFromResource(this, R.array.num, android.R.layout.select_dialog_item);
         spinner2.setAdapter(adapter2);
-        ArrayAdapter adapter3 = ArrayAdapter.createFromResource(this, R.array.num, android.R.layout.simple_spinner_item);
+        ArrayAdapter adapter3 = ArrayAdapter.createFromResource(this, R.array.num, android.R.layout.select_dialog_item);
         spinner3.setAdapter(adapter3);
-        ArrayAdapter adapter4 = ArrayAdapter.createFromResource(this, R.array.num, android.R.layout.simple_spinner_item);
+        ArrayAdapter adapter4 = ArrayAdapter.createFromResource(this, R.array.num, android.R.layout.select_dialog_item);
         spinner4.setAdapter(adapter4);
-        ArrayAdapter adapter5 = ArrayAdapter.createFromResource(this, R.array.num, android.R.layout.simple_spinner_item);
+        ArrayAdapter adapter5 = ArrayAdapter.createFromResource(this, R.array.num, android.R.layout.select_dialog_item);
         spinner5.setAdapter(adapter5);
-        ArrayAdapter adapter6 = ArrayAdapter.createFromResource(this, R.array.num, android.R.layout.simple_spinner_item);
+        ArrayAdapter adapter6 = ArrayAdapter.createFromResource(this, R.array.num, android.R.layout.select_dialog_item);
         spinner6.setAdapter(adapter6);
     }
 
