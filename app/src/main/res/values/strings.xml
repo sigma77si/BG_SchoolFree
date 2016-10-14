@@ -19,8 +19,8 @@
     <string name="test">Тестове</string>
     <string name="preparation">Подготовка</string>
     <string name="help">Относно</string>
-    <string name="points">Точки </string>
-    <string name="correct">Познати </string>
+    <string name="points">Точки: </string>
+    <string name="correct">Познати: </string>
     <string name="game_result">Резултати за играта</string>
     <string name="final_result">Краен резултат:</string>
     <string name="test1">Тест 1</string>
@@ -51,6 +51,7 @@
     <string name="m_viz_adapter_title">Кои си приличат? Животни</string>
     <string name="n_viz_adapter_title">Кои си приличат? Предмети</string>
     <string name="title_activity_test_results">Резултати</string>
+
     <string name="title_activity_help">Относно</string>
     <string name="ok">Разбрах</string>
     <string name="title_activity_happy_birthday">Кое е числото?</string>
@@ -71,7 +72,7 @@
     <string name="Intro1Text13">Запомнете картинките които ще се покажат на следващата страница. След 30 секунди ще се покаже друга страница.
     Натиснете на картинките които сте запомнили.</string>
     <string name="Intro1Text14">Колко е часът който показва часовника? Натиснете на правилния отговор. </string>
-    <string name="Intro1Text15">Двете картинки от модела в ляво иматвръзка помежду си. Избери едно от таблата в дясно, чийто две картинки имат същата връзка. </string>
+    <string name="Intro1Text15">Двете картинки от модела в ляво имат връзка помежду си. Избери едно от таблата в дясно, чийто две картинки имат същата връзка. </string>
     <string name="Intro1Text16">Открийте цифрата която се крие между преплетените линий и натиснете на съответния бутон</string>
     <string name="Intro1Text18">Намерете всички квадрати и натиснете на съответната цифра.</string>
     <string name="Intro1Text19">Проследете недовършените редове от цифри и се опитайте да определите коя е следващата цифра/число.</string>

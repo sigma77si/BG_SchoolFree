@@ -302,6 +302,7 @@ countAnswers.setText(Integer.toString(count));
 
     }
     public void setAllImages(){
+        countAnswers.setVisibility(View.VISIBLE);
         for(int i=0;i<30;i++){
             Random rnd = new Random();
             int randomPicPos = rnd.nextInt(30) + 1;

@@ -213,7 +213,8 @@
                 android:layout_weight="1.2"
                 android:background="@drawable/shapes2"
                 android:textColor="@color/accentColor"
-                android:padding="5dp"/>
+                android:padding="5dp"
+                android:textSize="30sp"/>
 
         </LinearLayout>
     </LinearLayout>
