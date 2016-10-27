@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">BG Schule</string>
+    <!--<string name="app_name">BG Schule</string>-->
+    <string name="app_name">БГ училище Първокласник</string>
+
     <string name="test">Tests</string>
     <string name="preparation">Ausbildung</string>
     <string name="help">über</string>

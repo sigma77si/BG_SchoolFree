@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         clickAnswerSound = sp.load(this, R.raw.sound, 1);
         mp = MediaPlayer.create(MainActivity.this, R.raw.intro_one);
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
+        selLocale("bg");
 
     }
     @Override
