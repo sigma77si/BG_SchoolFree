@@ -5,7 +5,8 @@
     <color name="primaryColor">#2196F3</color>
     <color name="primaryColorDark">#0D47A1</color>
 
-    <color name="accentColor">#E91E63</color>
+    <!--<color name="accentColor">#E91E63</color>-->
+    <color name="accentColor">#000000</color>
     <color name="bgr_color">#c0e4eb</color>
 
 

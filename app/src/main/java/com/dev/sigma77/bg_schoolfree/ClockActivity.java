@@ -40,7 +40,7 @@ public class ClockActivity extends AppCompatActivity implements View.OnClickList
     int correctSound, wrongSound, endSound,clickAnswerSound;
     Set passedScens=new HashSet();
     int randomScene;
-    public static int currentGamePoints = 0, correctAnswers = 0;
+     int currentGamePoints = 0, correctAnswers = 0;
     private Toolbar toolbar;
     Locale myLocale;
 
