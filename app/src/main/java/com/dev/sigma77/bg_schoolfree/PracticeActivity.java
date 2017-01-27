@@ -47,7 +47,8 @@ public class PracticeActivity extends AppCompatActivity {
         adapter = new VizAdapter(this, getData(), "Practice");
         reciclerView.setAdapter(adapter);
         reciclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        // myLocale = java.util.Locale.getDefault().getLanguage();
+        selLocale("bg");
 
     }
 

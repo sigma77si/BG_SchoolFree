@@ -49,6 +49,8 @@ public class TestActivity extends AppCompatActivity {
         adapter = new VizAdapter(this, getData(), "Test");
         reciclerView.setAdapter(adapter);
         reciclerView.setLayoutManager(new LinearLayoutManager(this));
+        // myLocale = java.util.Locale.getDefault().getLanguage();
+        setLocale("bg");
 
     }
 

@@ -35,7 +35,7 @@ public class MemoryActivity extends AppCompatActivity implements View.OnClickLis
     TextView countAnswers;
     SoundPool sp;
     int correctSound, wrongSound, endSound,clickAnswerSound;
-    public static int currentGamePoints = 0, correctAnswers = 0;
+    int currentGamePoints = 0, correctAnswers = 0;
     int count=0;
     private Toolbar toolbar;
 
@@ -338,12 +338,14 @@ countAnswers.setText(Integer.toString(count));
         if((correctAnswersPics.containsValue(v.getTag()))){
 
             v.setBackgroundColor(Color.GREEN);
+            v.setClickable(false);
             sp.play(correctSound, 1, 1, 0, 0, 1);
             correctAnswers++;
 
         }
         else {
             v.setBackgroundColor(Color.RED);
+            v.setClickable(false);
             sp.play(wrongSound, 1, 1, 0, 0, 1);
         }
        count++;
