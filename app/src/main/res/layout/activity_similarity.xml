@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.dev.sigma77.bg_schoolfree.SimilarityActivity"
+    tools:context="com.dev.sigma77.bg_schoolpro.SimilarityActivity"
     android:weightSum="4"
     android:background="@android:color/darker_gray">
     <include

@@ -12,6 +12,10 @@
     android:id="@+id/relLaiout"
     android:weightSum="11"
     >
+    <include
+        layout="@layout/app_bar"
+        android:id="@+id/app_bar"
+        />
 
 
     <LinearLayout
